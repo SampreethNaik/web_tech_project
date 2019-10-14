@@ -1,10 +1,14 @@
 body, html {
   height: 100%;
   margin: 0;
+  transition: .5s;
+  color: #fff;
+  font-family: Arial,Helvetica,sans-serif;
+  font-size:20px;
 }
 
 .bg {
-  	background-image: url("backgrounddash.jpg");
+  	background-image: url("dashback.jpeg");
 	height: 100%; 
   	background-position: center;
   	background-repeat: no-repeat;
@@ -45,9 +49,18 @@ body, html {
   margin-left: 50px;
 }
 
-
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
 
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
- }
+}
+
+#main h4 {
+	margin-left: 40%;
+	font-size:50px;
+	color:#fff;
+}
