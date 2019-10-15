@@ -66,8 +66,10 @@ body, html {
 }
 
 #main p{
-	margin-left:40%;
+	margin-left:35%;
 	font-family: all;
+  color:#c0c0c0;
+  font-size:25px;
 }
 
 .dropbtn {
