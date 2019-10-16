@@ -1,3 +1,10 @@
+body{
+  background-color: #252525 ;
+  color: #fff;
+  font-family: Arial,Helvetica,sans-serif;
+  font-size:20px;
+  line-height: 1.6em;
+}
 .sidenav {
   height: 100%;
   width: 0;
