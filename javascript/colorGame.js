@@ -1,9 +1,58 @@
-var colors = generatecolor(6);
+var numsquares = 6;
+var colors = generatecolor(numsquares);
 var squares = document.querySelectorAll('.square');
 var pickedcolor = pickcolor();
 var colordisplay = document.querySelector('#rgb');
 var resdisplay = document.querySelector('#res');
+var h1display = document.querySelector('h1');
+var easybtn = document.querySelector('#easybtn');
+var hardbtn = document.querySelector('#hardbtn');
+var resetbtn = document.querySelector('#reset');
 colordisplay.textContent = pickedcolor;
+
+
+resetbtn.addEventListener('click', function(){
+	colors = generatecolor(numsquares);
+	pickedcolor = pickcolor();
+	colordisplay.textContent = pickedcolor;
+	for (var i = 0; i < colors.length; i++) {
+		squares[i].style.background = colors[i];
+	}
+	h1display.style.background = 'steelblue';
+	resetbtn.textContent = 'New Colors';
+	resdisplay.textContent = '';
+});
+
+easybtn.addEventListener('click', function(){
+	easybtn.classList.add('selected');
+	hardbtn.classList.remove('selected');
+	numsquares = 3;
+	colors = generatecolor(numsquares);
+	pickedcolor = pickcolor();
+	colordisplay.textContent = pickedcolor;
+	for (var i = 0; i < squares.length; i++) {
+		if(colors[i]) {
+			squares[i].style.background = colors[i];
+		} else {
+			squares[i].style.display = 'none';
+		}
+	}
+});
+
+hardbtn.addEventListener('click', function(){
+	hardbtn.classList.add('selected');
+	easybtn.classList.remove('selected');
+	numsquares = 6;
+	colors = generatecolor(numsquares);
+	pickedcolor = pickcolor();
+	colordisplay.textContent = pickedcolor;
+	for (var i = 0; i < squares.length; i++) {
+		if(colors[i]) {
+			squares[i].style.background = colors[i];
+			squares[i].style.display = 'block';
+		}
+	}
+});
 
 for (var i = 0; i < squares.length; i++) {
 	squares[i].style.background = colors[i];
@@ -13,7 +62,9 @@ for (var i = 0; i < squares.length; i++) {
 		if(clickedcolor === pickedcolor)
 		{
 			resdisplay.textContent = 'Correct';
-			final(pickedcolor);
+			setcolor(pickedcolor);
+			h1display.style.background = pickedcolor;
+			resetbtn.textContent = 'Play Again?'
 		} else {
 			this.style.background = '#232323';
 			resdisplay.textContent = 'Try Again!!!';
@@ -41,7 +92,7 @@ function randomcolor() {
 	return 'rgb(' + r + ', ' + g + ', ' + b +')';
 }
 
-function final(c) {
+function setcolor(c) {
 	for (var i = 0; i < colors.length; i++) {
 		squares[i].style.background = c;
 	}
