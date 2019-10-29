@@ -4,149 +4,9 @@
 <head>
 <meta charset="UTF-8"/>
 <title>Data Structures/Stacks and Queues - Wikibooks, open books for an open world</title>
-<script>document.documentElement.className="client-js";RLCONF={"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":0,"wgPageName":"Data_Structures/Stacks_and_Queues","wgTitle":"Data Structures/Stacks and Queues","wgCurRevisionId":3581591,"wgRevisionId":3581591,"wgArticleId":20060,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Book:Data Structures"],"wgBreakFrames":!1,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Data_Structures/Stacks_and_Queues","wgRelevantArticleId":20060,"wgRequestId":"XbXPAgpAMFcAAKW3gf4AAABE","wgCSPNonce":!1,
-"wgIsProbablyEditable":!0,"wgRelevantPageIsProbablyEditable":!0,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgFlaggedRevsParams":{"tags":{"value":{"levels":3,"quality":2,"pristine":3}}},"wgStableRevisionId":3581591,"wgMediaViewerOnClick":!0,"wgMediaViewerEnabledByDefault":!0,"wgVisualEditor":{"pageLanguageCode":"en","pageLanguageDir":"ltr","pageVariantFallbacks":"en"},"wgMFDisplayWikibaseDescriptions":{"search":!0,"nearby":!0,"watchlist":!0,"tagline":!1},"wgWMESchemaEditAttemptStepOversample":!1,"wgULSCurrentAutonym":"English","wgNoticeProject":"wikibooks","wgCentralAuthMobileDomain":!1,"wgEditSubmitButtonLabelPublish":!0};RLSTATE={"ext.globalCssJs.user.styles":"ready","site.styles":"ready","noscript":"ready","user.styles":"ready","ext.globalCssJs.user":"ready","user":"ready","user.options":"ready","user.tokens":"loading","ext.flaggedRevs.icons":"ready","oojs-ui-core.styles":"ready","oojs-ui.styles.indicators":"ready","mediawiki.widgets.styles":"ready",
-"oojs-ui-core.icons":"ready","ext.math.styles":"ready","ext.cite.styles":"ready","ext.pygments":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","jquery.tablesorter.styles":"ready","mediawiki.toc.styles":"ready","wikibase.client.init":"ready","ext.flaggedRevs.basic":"ready","ext.visualEditor.desktopArticleTarget.noscript":"ready","ext.uls.interlanguage":"ready","ext.wikimediaBadges":"ready","ext.3d.styles":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"};RLPAGEMODULES=["ext.math.scripts","ext.cite.ux-enhancements","site","mediawiki.page.startup","mediawiki.page.ready","jquery.tablesorter","mediawiki.toc","mediawiki.searchSuggest","ext.flaggedRevs.advanced","ext.gadget.wikidialog","ext.gadget.commons-file","ext.centralauth.centralautologin","mmv.head","mmv.bootstrap.autostart","ext.visualEditor.desktopArticleTarget.init","ext.visualEditor.targetLoader","ext.eventLogging","ext.wikimediaEvents","ext.navigationTiming",
-"ext.uls.compactlinks","ext.uls.interface","ext.centralNotice.geoIP","ext.centralNotice.startUp","skins.vector.js"];</script>
-<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.tokens@tffin",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
-});});</script>
-<link rel="stylesheet" href="/w/load.php?lang=en&amp;modules=ext.3d.styles%7Cext.cite.styles%7Cext.flaggedRevs.basic%2Cicons%7Cext.math.styles%7Cext.pygments%2CwikimediaBadges%7Cext.uls.interlanguage%7Cext.visualEditor.desktopArticleTarget.noscript%7Cjquery.tablesorter.styles%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.toc.styles%7Cmediawiki.widgets.styles%7Coojs-ui-core.icons%2Cstyles%7Coojs-ui.styles.indicators%7Cskins.vector.styles%7Cwikibase.client.init&amp;only=styles&amp;skin=vector"/>
-<script async="" src="/w/load.php?lang=en&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector"></script>
-<meta name="ResourceLoaderDynamicStyles" content=""/>
-<link rel="stylesheet" href="/w/load.php?lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector"/>
-<meta name="generator" content="MediaWiki 1.35.0-wmf.3"/>
-<meta name="referrer" content="origin"/>
-<meta name="referrer" content="origin-when-crossorigin"/>
-<meta name="referrer" content="origin-when-cross-origin"/>
-<link rel="alternate" type="application/x-wiki" title="Edit" href="/w/index.php?title=Data_Structures/Stacks_and_Queues&amp;action=edit"/>
-<link rel="edit" title="Edit" href="/w/index.php?title=Data_Structures/Stacks_and_Queues&amp;action=edit"/>
-<link rel="shortcut icon" href="/static/favicon/wikibooks.ico"/>
-<link rel="search" type="application/opensearchdescription+xml" href="/w/opensearch_desc.php" title="Wikibooks (en)"/>
-<link rel="EditURI" type="application/rsd+xml" href="//en.wikibooks.org/w/api.php?action=rsd"/>
-<link rel="license" href="//creativecommons.org/licenses/by-sa/3.0/"/>
-<link rel="alternate" type="application/atom+xml" title="Wikibooks Atom feed" href="/w/index.php?title=Special:RecentChanges&amp;feed=atom"/>
-<link rel="canonical" href="https://en.wikibooks.org/wiki/Data_Structures/Stacks_and_Queues"/>
-<link rel="dns-prefetch" href="//login.wikimedia.org"/>
-<link rel="dns-prefetch" href="//meta.wikimedia.org" />
-<!--[if lt IE 9]><script src="/w/resources/lib/html5shiv/html5shiv.js"></script><![endif]-->
-</head>
-<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject mw-editable page-Data_Structures_Stacks_and_Queues rootpage-Data_Structures skin-vector action-view">
-<div id="mw-page-base" class="noprint"></div>
-<div id="mw-head-base" class="noprint"></div>
-<div id="content" class="mw-body" role="main">
-	<a id="top"></a>
-	<div id="siteNotice" class="mw-body-content"><!-- CentralNotice --></div>
-	<div class="mw-indicators mw-body-content">
-</div>
 
-	<h1 id="firstHeading" class="firstHeading" lang="en">Data Structures/Stacks and Queues</h1>
-	
-	<div id="bodyContent" class="mw-body-content">
-		<div id="siteSub" class="noprint">From Wikibooks, open books for an open world</div>
-		<div id="contentSub"><span class="subpages">&lt; <a href="/wiki/Data_Structures" title="Data Structures">Data Structures</a></span></div>
-		
-		
-		
-		<div id="jump-to-nav"></div>
-		<a class="mw-jump-link" href="#mw-head">Jump to navigation</a>
-		<a class="mw-jump-link" href="#p-search">Jump to search</a>
-		<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="mw-parser-output"><div style="width:60%; margin:0.5em auto; text-align:center; border:1px solid #003365; background:#E8FFE8; font-size:95%; white-space:nowrap;">
-<p><b><a href="/wiki/Data_Structures" title="Data Structures">Data Structures</a></b><br />
-<a href="/wiki/Data_Structures/Introduction" title="Data Structures/Introduction">Introduction</a> -
-<a href="/wiki/Data_Structures/Asymptotic_Notation" title="Data Structures/Asymptotic Notation">Asymptotic Notation</a> -
-<a href="/wiki/Data_Structures/Arrays" title="Data Structures/Arrays">Arrays</a> -
-<a href="/wiki/Data_Structures/List_Structures" title="Data Structures/List Structures">List Structures &amp; Iterators</a><br />
-<a class="mw-selflink selflink">Stacks &amp; Queues</a> -
-<a href="/wiki/Data_Structures/Trees" title="Data Structures/Trees">Trees</a> -
-<a href="/wiki/Data_Structures/Min_and_Max_Heaps" title="Data Structures/Min and Max Heaps">Min &amp; Max Heaps</a> -
-<a href="/wiki/Data_Structures/Graphs" title="Data Structures/Graphs">Graphs</a><br />
-<a href="/wiki/Data_Structures/Hash_Tables" title="Data Structures/Hash Tables">Hash Tables</a> -
-<a href="/wiki/Data_Structures/Sets" title="Data Structures/Sets">Sets</a> -
-<a href="/wiki/Data_Structures/Tradeoffs" title="Data Structures/Tradeoffs">Tradeoffs</a>
-</p>
-</div>
-<div style="clear: both"></div>
-<table style="background: #ffd; border: 1px solid #aaaaaa; padding: 6pt; margin: 12pt 8%; width: 60%; margin: auto;" class="notice noprint notice-todo">
-<tbody><tr>
-<td style="width: 58px;"><div class="floatleft"><img alt="Clipboard" src="//upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Clipboard.svg/45px-Clipboard.svg.png" decoding="async" width="45" height="45" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Clipboard.svg/68px-Clipboard.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Clipboard.svg/90px-Clipboard.svg.png 2x" data-file-width="48" data-file-height="48" /></div>
-</td>
-<td>
-<p><b>To do:</b><br />queue implemented as an array: circular and fixed-sized
-</p>
-</td></tr></tbody></table>
-<div style="clear: both"></div>
-<div id="toc" class="toc"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2>Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
-<ul>
-<li class="toclevel-1 tocsection-1"><a href="#Stacks_and_Queues"><span class="tocnumber">1</span> <span class="toctext">Stacks and Queues</span></a>
-<ul>
-<li class="toclevel-2 tocsection-2"><a href="#Stacks"><span class="tocnumber">1.1</span> <span class="toctext">Stacks</span></a>
-<ul>
-<li class="toclevel-3 tocsection-3"><a href="#Linked_List_Implementation"><span class="tocnumber">1.1.1</span> <span class="toctext">Linked List Implementation</span></a>
-<ul>
-<li class="toclevel-4 tocsection-4"><a href="#Performance_Analysis"><span class="tocnumber">1.1.1.1</span> <span class="toctext">Performance Analysis</span></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toclevel-2 tocsection-5"><a href="#Applications_of_Stacks"><span class="tocnumber">1.2</span> <span class="toctext">Applications of Stacks</span></a>
-<ul>
-<li class="toclevel-3 tocsection-6"><a href="#Converting_a_decimal_number_into_a_binary_number"><span class="tocnumber">1.2.1</span> <span class="toctext">Converting a decimal number into a binary number</span></a></li>
-<li class="toclevel-3 tocsection-7"><a href="#Towers_of_Hanoi"><span class="tocnumber">1.2.2</span> <span class="toctext">Towers of Hanoi</span></a>
-<ul>
-<li class="toclevel-4 tocsection-8"><a href="#First_Implementation_(Without_using_Stacks)"><span class="tocnumber">1.2.2.1</span> <span class="toctext">First Implementation (Without using Stacks)</span></a></li>
-<li class="toclevel-4 tocsection-9"><a href="#Second_Implementation_(Using_Stacks)"><span class="tocnumber">1.2.2.2</span> <span class="toctext">Second Implementation (Using Stacks)</span></a></li>
-</ul>
-</li>
-<li class="toclevel-3 tocsection-10"><a href="#Expression_evaluation_and_syntax_parsing"><span class="tocnumber">1.2.3</span> <span class="toctext">Expression evaluation and syntax parsing</span></a>
-<ul>
-<li class="toclevel-4 tocsection-11"><a href="#Evaluation_of_an_Infix_Expression_that_is_Fully_Parenthesized"><span class="tocnumber">1.2.3.1</span> <span class="toctext">Evaluation of an Infix Expression that is Fully Parenthesized</span></a></li>
-<li class="toclevel-4 tocsection-12"><a href="#Evaluation_of_Infix_Expression_which_is_not_fully_parenthesized"><span class="tocnumber">1.2.3.2</span> <span class="toctext">Evaluation of Infix Expression which is not fully parenthesized</span></a></li>
-<li class="toclevel-4 tocsection-13"><a href="#Evaluation_of_Prefix_Expression"><span class="tocnumber">1.2.3.3</span> <span class="toctext">Evaluation of Prefix Expression</span></a></li>
-</ul>
-</li>
-<li class="toclevel-3 tocsection-14"><a href="#Conversion_of_an_Infix_expression_that_is_fully_parenthesized_into_a_Postfix_expression"><span class="tocnumber">1.2.4</span> <span class="toctext">Conversion of an Infix expression that is fully parenthesized into a Postfix expression</span></a></li>
-<li class="toclevel-3 tocsection-15"><a href="#Rearranging_railroad_cars"><span class="tocnumber">1.2.5</span> <span class="toctext">Rearranging railroad cars</span></a>
-<ul>
-<li class="toclevel-4 tocsection-16"><a href="#Problem_Description"><span class="tocnumber">1.2.5.1</span> <span class="toctext">Problem Description</span></a></li>
-<li class="toclevel-4 tocsection-17"><a href="#Solution_Strategy"><span class="tocnumber">1.2.5.2</span> <span class="toctext">Solution Strategy</span></a></li>
-<li class="toclevel-4 tocsection-18"><a href="#A_Three_Track_Example"><span class="tocnumber">1.2.5.3</span> <span class="toctext">A Three Track Example</span></a></li>
-</ul>
-</li>
-<li class="toclevel-3 tocsection-19"><a href="#Quicksort"><span class="tocnumber">1.2.6</span> <span class="toctext">Quicksort</span></a></li>
-<li class="toclevel-3 tocsection-20"><a href="#The_Stock_Span_Problem"><span class="tocnumber">1.2.7</span> <span class="toctext">The Stock Span Problem</span></a>
-<ul>
-<li class="toclevel-4 tocsection-21"><a href="#An_algorithm_which_has_Quadratic_Time_Complexity"><span class="tocnumber">1.2.7.1</span> <span class="toctext">An algorithm which has Quadratic Time Complexity</span></a></li>
-<li class="toclevel-4 tocsection-22"><a href="#An_algorithm_that_has_Linear_Time_Complexity"><span class="tocnumber">1.2.7.2</span> <span class="toctext">An algorithm that has Linear Time Complexity</span></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toclevel-2 tocsection-23"><a href="#Related_Links"><span class="tocnumber">1.3</span> <span class="toctext">Related Links</span></a></li>
-<li class="toclevel-2 tocsection-24"><a href="#Queues"><span class="tocnumber">1.4</span> <span class="toctext">Queues</span></a>
-<ul>
-<li class="toclevel-3 tocsection-25"><a href="#Linked_List_Implementation_2"><span class="tocnumber">1.4.1</span> <span class="toctext">Linked List Implementation</span></a>
-<ul>
-<li class="toclevel-4 tocsection-26"><a href="#Performance_Analysis_2"><span class="tocnumber">1.4.1.1</span> <span class="toctext">Performance Analysis</span></a></li>
-</ul>
-</li>
-<li class="toclevel-3 tocsection-27"><a href="#Circular_Array_Implementation"><span class="tocnumber">1.4.2</span> <span class="toctext">Circular Array Implementation</span></a>
-<ul>
-<li class="toclevel-4 tocsection-28"><a href="#Performance_Analysis_3"><span class="tocnumber">1.4.2.1</span> <span class="toctext">Performance Analysis</span></a></li>
-</ul>
-</li>
-<li class="toclevel-3 tocsection-29"><a href="#Priority_Queue_Implementation"><span class="tocnumber">1.4.3</span> <span class="toctext">Priority Queue Implementation</span></a></li>
-<li class="toclevel-3 tocsection-30"><a href="#Related_Links_2"><span class="tocnumber">1.4.4</span> <span class="toctext">Related Links</span></a></li>
-</ul>
-</li>
-<li class="toclevel-2 tocsection-31"><a href="#Deques"><span class="tocnumber">1.5</span> <span class="toctext">Deques</span></a></li>
-</ul>
-</li>
-<li class="toclevel-1 tocsection-32"><a href="#References"><span class="tocnumber">2</span> <span class="toctext">References</span></a></li>
-</ul>
-</div>
-
-<h2><span class="mw-headline" id="Stacks_and_Queues">Stacks and Queues</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Data_Structures/Stacks_and_Queues&amp;action=edit&amp;section=1" title="Edit section: Stacks and Queues">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
-<h3><span class="mw-headline" id="Stacks">Stacks</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Data_Structures/Stacks_and_Queues&amp;action=edit&amp;section=2" title="Edit section: Stacks">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<h2><span class="mw-headline" id="Stacks_and_Queues">Stacks and Queues</span></h2>
+<h3><span class="mw-headline" id="Stacks">Stacks</span></h3>
 <p>A stack is a basic data structure that can be logically thought of as a linear structure represented by a real physical stack or pile, a structure where insertion and deletion of items takes place at one end called top of the stack. The basic concept can be illustrated by thinking of your data set as a stack of plates or books where you can only take the top item off the stack in order to remove things from it. This structure is used all throughout programming.
 </p><p>The basic implementation of a stack is also called a LIFO (Last In First Out) to demonstrate the way it accesses data, since as we will see there are various variations of stack implementations.
 </p><p>There are basically three operations that can be performed on stacks. They are
@@ -154,16 +14,7 @@
 2) deleting an item from the stack (pop).
 3) displaying the contents of the stack(pip).
 </p>
-<div style="clear: both"></div>
-<p><a href="/wiki/File:Data_stack.svg" class="image"><img alt="Data stack.svg" src="//upload.wikimedia.org/wikipedia/commons/thumb/2/29/Data_stack.svg/391px-Data_stack.svg.png" decoding="async" width="391" height="281" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/2/29/Data_stack.svg/587px-Data_stack.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/2/29/Data_stack.svg/782px-Data_stack.svg.png 2x" data-file-width="391" data-file-height="281" /></a>
-</p>
-<table class="notice notice-note noprint" style="background: #f2fff2; border: solid 1px #bfffbf; padding: 0.5em; width: 95%; margin: auto; vertical-align: top; -moz-border-radius:10px;">
-<tbody><tr>
-<td>
-<p><b>Note:</b><br />
-Depending on the language and implementation the data structure may share the name with an abstract data type that support all of the data structure characteristics.
-</p>
-</td></tr></tbody></table>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Data_stack.svg/587px-Data_stack.svg.png">
 <p>Below are some of operations a <b>stack data type</b> normally supports:
 </p>
 <div class="interface" style="background-color: #FFFFEE; border: solid 1px #FFC92E; padding: 1em; width:80%" title="Stack&lt;item-type&gt; Operations">
@@ -211,7 +62,7 @@ Depending on the language and implementation the data structure may share the na
 </math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/221c692848ccee2e02507eded3adfb7c2f7d5fc8" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:6.293ex; height:2.843ex;" alt="O(N)."/></span>
 </p>
 </div>
-<h4><span class="mw-headline" id="Linked_List_Implementation">Linked List Implementation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Data_Structures/Stacks_and_Queues&amp;action=edit&amp;section=3" title="Edit section: Linked List Implementation">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<h4><span class="mw-headline" id="Linked_List_Implementation">Linked List Implementation</span></h4>
 <p>The basic linked list implementation is one of the easiest stack implementations you can do.  Structurally it is a linked list.
 </p>
 <pre>type Stack&lt;item_type&gt;
@@ -263,57 +114,11 @@ end type
 <p>A real Stack implementation in a published library would probably re-implement the linked list in order to squeeze the last bit of performance out of the implementation by leaving out unneeded functionality. The above implementation gives you the ideas involved, and any optimization you need can be accomplished by inlining the linked list code.
 </p><p><br />
 </p>
-<h5><span class="mw-headline" id="Performance_Analysis">Performance Analysis</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Data_Structures/Stacks_and_Queues&amp;action=edit&amp;section=4" title="Edit section: Performance Analysis">edit</a><span class="mw-editsection-bracket">]</span></span></h5>
-<p>In a linked list, accessing the first element is an <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle O(1)}">
-  <semantics>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mstyle displaystyle="true" scriptlevel="0">
-        <mi>O</mi>
-        <mo stretchy="false">(</mo>
-        <mn>1</mn>
-        <mo stretchy="false">)</mo>
-      </mstyle>
-    </mrow>
-    <annotation encoding="application/x-tex">{\displaystyle O(1)}</annotation>
-  </semantics>
-</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/e66384bc40452c5452f33563fe0e27e803b0cc21" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:4.745ex; height:2.843ex;" alt="O(1)"/></span> operation.The list contains a pointer that checks for empty/fullness as done here are also <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle O(1)}">
-  <semantics>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mstyle displaystyle="true" scriptlevel="0">
-        <mi>O</mi>
-        <mo stretchy="false">(</mo>
-        <mn>1</mn>
-        <mo stretchy="false">)</mo>
-      </mstyle>
-    </mrow>
-    <annotation encoding="application/x-tex">{\displaystyle O(1)}</annotation>
-  </semantics>
-</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/e66384bc40452c5452f33563fe0e27e803b0cc21" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:4.745ex; height:2.843ex;" alt="O(1)"/></span>
-(depending on what time/space tradeoff is made). Most of the time, users of a Stack do not use the <code>getSize()</code> operation, and so a bit of space can be saved by not optimizing it.
-</p><p>Since all operations are at the top of the stack, the array implementation is now much, much better.
-</p>
-<pre>  public class StackArray implements Stack
-  {
-      protected int top;
-      protected Object[] data;
-     ...
-  }
-</pre>
-<p>The array implementation keeps the bottom of the stack at the beginning of the array. It grows toward the end of the array. 
-The only problem is if you attempt to push an element when the array is full. If so
-</p>
-<pre>   Assert.pre(!isFull(),"Stack is not full.");
-</pre>
-<p>will fail, raising an exception. 
-Thus it makes more sense to implement with Vector (see StackVector) to allow unbounded growth (at cost of occasional O(n) delays).
-</p><p>Complexity:
-</p><p>All operations are O(1) with exception of occasional push and clear, which should replace all entries by null in order to let them be garbage-collected. Array implementation does not replace null entries. The Vector implementation does...
-</p>
-<h3><span class="mw-headline" id="Applications_of_Stacks">Applications of Stacks</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Data_Structures/Stacks_and_Queues&amp;action=edit&amp;section=5" title="Edit section: Applications of Stacks">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<div class="thumb tright"><div class="thumbinner" style="width:222px;"><a href="/wiki/File:Stack_of_books.jpg" class="image"><img alt="" src="//upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Stack_of_books.jpg/220px-Stack_of_books.jpg" decoding="async" width="220" height="165" class="thumbimage" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Stack_of_books.jpg/330px-Stack_of_books.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Stack_of_books.jpg/440px-Stack_of_books.jpg 2x" data-file-width="3264" data-file-height="2448" /></a>  <div class="thumbcaption"><div class="magnify"><a href="/wiki/File:Stack_of_books.jpg" class="internal" title="Enlarge"></a></div>Stack of books</div></div></div>
+<h3><span class="mw-headline" id="Applications_of_Stacks">Applications of Stacks</span></h3>
+<div class="thumb tright"><div class="thumbinner" style="width:222px;"><a href="/wiki/File:Stack_of_books.jpg" class="image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Stack_of_books.jpg/330px-Stack_of_books.jpg"></a>  <div class="thumbcaption"><div class="magnify"><a href="/wiki/File:Stack_of_books.jpg" class="internal" title="Enlarge"></a></div>Stack of books</div></div></div>
 <p>Using stacks, we can solve many applications, some of which are listed below.
 </p>
-<h4><span class="mw-headline" id="Converting_a_decimal_number_into_a_binary_number">Converting a decimal number into a binary number</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Data_Structures/Stacks_and_Queues&amp;action=edit&amp;section=6" title="Edit section: Converting a decimal number into a binary number">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<h4><span class="mw-headline" id="Converting_a_decimal_number_into_a_binary_number">Converting a decimal number into a binary number</span></h4>
 <p>The logic for transforming a decimal number into a binary number is as follows:
 </p>
 <pre>    * Read a number
@@ -345,20 +150,20 @@ Thus it makes more sense to implement with Vector (see StackVector) to allow unb
    6. End iteration2
    7. STOP
 </pre>
-<h4><span class="mw-headline" id="Towers_of_Hanoi">Towers of Hanoi</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Data_Structures/Stacks_and_Queues&amp;action=edit&amp;section=7" title="Edit section: Towers of Hanoi">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
-<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="/wiki/File:Tower_of_Hanoi.jpeg" class="image"><img alt="" src="//upload.wikimedia.org/wikipedia/commons/thumb/0/07/Tower_of_Hanoi.jpeg/300px-Tower_of_Hanoi.jpeg" decoding="async" width="300" height="132" class="thumbimage" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/0/07/Tower_of_Hanoi.jpeg/450px-Tower_of_Hanoi.jpeg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/0/07/Tower_of_Hanoi.jpeg/600px-Tower_of_Hanoi.jpeg 2x" data-file-width="677" data-file-height="298" /></a>  <div class="thumbcaption"><div class="magnify"><a href="/wiki/File:Tower_of_Hanoi.jpeg" class="internal" title="Enlarge"></a></div>Towers of Hanoi</div></div></div>
+<h4><span class="mw-headline" id="Towers_of_Hanoi">Towers of Hanoi</span></h4>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><a href="/wiki/File:Tower_of_Hanoi.jpeg" class="image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Tower_of_Hanoi.jpeg/450px-Tower_of_Hanoi.jpeg"></a>  <div class="thumbcaption"><div class="magnify"><a href="/wiki/File:Tower_of_Hanoi.jpeg" class="internal" title="Enlarge"></a></div>Towers of Hanoi</div></div></div>
 <p>One of the most interesting applications of stacks can be found in solving a puzzle called Tower of Hanoi. According to an old Brahmin story, the existence of the universe is calculated in terms of the time taken by a number of monks, who are working all the time, to move 64 disks from one pole to another. But there are some rules about how this should be done, which are:
 </p>
 <ol><li>You can move only one disk at a time.</li>
 <li>For temporary storage, a third pole may be used.</li>
-<li>You cannot place a disk of larger diameter on a disk of smaller diameter.<sup id="cite_ref-Dromey_1-0" class="reference"><a href="#cite_note-Dromey-1">&#91;1&#93;</a></sup></li></ol>
+<li>You cannot place a disk of larger diameter on a disk of smaller diameter.</li></ol>
 <p>Here we assume that  A is first tower, B is second tower  &amp; C is third tower.
 </p>
-<div class="thumb tleft"><div class="thumbinner" style="width:377px;"><a href="/wiki/File:Towersofhanoi1.pdf" class="image"><img alt="" src="//upload.wikimedia.org/wikipedia/commons/thumb/8/87/Towersofhanoi1.pdf/page1-375px-Towersofhanoi1.pdf.jpg" decoding="async" width="375" height="485" class="thumbimage" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/8/87/Towersofhanoi1.pdf/page1-563px-Towersofhanoi1.pdf.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/8/87/Towersofhanoi1.pdf/page1-750px-Towersofhanoi1.pdf.jpg 2x" data-file-width="1275" data-file-height="1650" /></a>  <div class="thumbcaption"><div class="magnify"><a href="/wiki/File:Towersofhanoi1.pdf" class="internal" title="Enlarge"></a></div>Towers of Hanoi step 1</div></div></div>
-<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:377px;"><a href="/wiki/File:Towersofhanoi2.pdf" class="image"><img alt="" src="//upload.wikimedia.org/wikipedia/commons/thumb/1/19/Towersofhanoi2.pdf/page1-375px-Towersofhanoi2.pdf.jpg" decoding="async" width="375" height="485" class="thumbimage" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/1/19/Towersofhanoi2.pdf/page1-563px-Towersofhanoi2.pdf.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/1/19/Towersofhanoi2.pdf/page1-750px-Towersofhanoi2.pdf.jpg 2x" data-file-width="1275" data-file-height="1650" /></a>  <div class="thumbcaption"><div class="magnify"><a href="/wiki/File:Towersofhanoi2.pdf" class="internal" title="Enlarge"></a></div>Towers of Hanoi step 2</div></div></div></div>
-<div class="thumb tleft"><div class="thumbinner" style="width:377px;"><a href="/wiki/File:Towersofhanoi3.pdf" class="image"><img alt="" src="//upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Towersofhanoi3.pdf/page1-375px-Towersofhanoi3.pdf.jpg" decoding="async" width="375" height="485" class="thumbimage" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Towersofhanoi3.pdf/page1-563px-Towersofhanoi3.pdf.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Towersofhanoi3.pdf/page1-750px-Towersofhanoi3.pdf.jpg 2x" data-file-width="1275" data-file-height="1650" /></a>  <div class="thumbcaption"><div class="magnify"><a href="/wiki/File:Towersofhanoi3.pdf" class="internal" title="Enlarge"></a></div>Towers of Hanoi step 3</div></div></div>
-<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:377px;"><a href="/wiki/File:Towersofhanoi4.pdf" class="image"><img alt="" src="//upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Towersofhanoi4.pdf/page1-375px-Towersofhanoi4.pdf.jpg" decoding="async" width="375" height="485" class="thumbimage" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Towersofhanoi4.pdf/page1-563px-Towersofhanoi4.pdf.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Towersofhanoi4.pdf/page1-750px-Towersofhanoi4.pdf.jpg 2x" data-file-width="1275" data-file-height="1650" /></a>  <div class="thumbcaption"><div class="magnify"><a href="/wiki/File:Towersofhanoi4.pdf" class="internal" title="Enlarge"></a></div>Towers of Hanoi step 4</div></div></div></div>
-<div class="thumb tright"><div class="thumbinner" style="width:352px;"><a href="/wiki/File:Towerofhanoi.jpg" class="image"><img alt="" src="//upload.wikimedia.org/wikipedia/commons/thumb/3/31/Towerofhanoi.jpg/350px-Towerofhanoi.jpg" decoding="async" width="350" height="702" class="thumbimage" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/3/31/Towerofhanoi.jpg/525px-Towerofhanoi.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/3/31/Towerofhanoi.jpg/700px-Towerofhanoi.jpg 2x" data-file-width="1360" data-file-height="2726" /></a>  <div class="thumbcaption"><div class="magnify"><a href="/wiki/File:Towerofhanoi.jpg" class="internal" title="Enlarge"></a></div>Tower of Hanoi</div></div></div>
+<div class="thumb tleft"><div class="thumbinner" style="width:377px;"><a href="/wiki/File:Towersofhanoi1.pdf" class="image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Towersofhanoi1.pdf/page1-563px-Towersofhanoi1.pdf.jpg"></a>  <div class="thumbcaption"><div class="magnify"><a href="/wiki/File:Towersofhanoi1.pdf" class="internal" title="Enlarge"></a></div>Towers of Hanoi step 1</div></div></div>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:377px;"><a href="/wiki/File:Towersofhanoi2.pdf" class="image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Towersofhanoi2.pdf/page1-563px-Towersofhanoi2.pdf.jpg"></a>  <div class="thumbcaption"><div class="magnify"><a href="/wiki/File:Towersofhanoi2.pdf" class="internal" title="Enlarge"></a></div>Towers of Hanoi step 2</div></div></div></div>
+<div class="thumb tleft"><div class="thumbinner" style="width:377px;"><a href="/wiki/File:Towersofhanoi3.pdf" class="image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Towersofhanoi3.pdf/page1-563px-Towersofhanoi3.pdf.jpg"></a>  <div class="thumbcaption"><div class="magnify"><a href="/wiki/File:Towersofhanoi3.pdf" class="internal" title="Enlarge"></a></div>Towers of Hanoi step 3</div></div></div>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:377px;"><a href="/wiki/File:Towersofhanoi4.pdf" class="image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Towersofhanoi4.pdf/page1-563px-Towersofhanoi4.pdf.jpg"></a>  <div class="thumbcaption"><div class="magnify"><a href="/wiki/File:Towersofhanoi4.pdf" class="internal" title="Enlarge"></a></div>Towers of Hanoi step 4</div></div></div></div>
+<div class="thumb tright"><div class="thumbinner" style="width:352px;"><a href="/wiki/File:Towerofhanoi.jpg" class="image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Towerofhanoi.jpg/525px-Towerofhanoi.jpg"></a></div>Tower of Hanoi</div></div></div>
 <p><b>Output&#160;: (when there are 3 disks)</b>
 </p><p>Let <i>1</i> be the smallest disk, <i>2</i> be the disk of medium size and <i>3</i> be the largest disk.
 </p>
@@ -536,7 +341,7 @@ Thus it makes more sense to implement with Vector (see StackVector) to allow unb
 </td></tr></tbody></table>
 <p>The C++ code for this solution can be implemented in two ways:
 </p>
-<h5><span id="First_Implementation_.28Without_using_Stacks.29"></span><span class="mw-headline" id="First_Implementation_(Without_using_Stacks)">First Implementation (Without using Stacks)</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Data_Structures/Stacks_and_Queues&amp;action=edit&amp;section=8" title="Edit section: First Implementation (Without using Stacks)">edit</a><span class="mw-editsection-bracket">]</span></span></h5>
+<h5><span id="First_Implementation_.28Without_using_Stacks.29"></span><span class="mw-headline" id="First_Implementation_(Without_using_Stacks)">First Implementation (Without using Stacks)</span></h5>
 <p>Here we assume that  A is first tower, B is second tower  &amp; C is third tower. (B is the intermediate)
 </p>
 <div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span></span><span class="kt">void</span> <span class="nf">TowersofHanoi</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">,</span> <span class="kt">int</span> <span class="n">c</span><span class="p">)</span>
@@ -551,9 +356,7 @@ Thus it makes more sense to implement with Vector (see StackVector) to allow unb
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
-<p><sup id="cite_ref-ReferenceA_2-0" class="reference"><a href="#cite_note-ReferenceA-2">&#91;2&#93;</a></sup>
-</p>
-<h5><span id="Second_Implementation_.28Using_Stacks.29"></span><span class="mw-headline" id="Second_Implementation_(Using_Stacks)">Second Implementation (Using Stacks)</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Data_Structures/Stacks_and_Queues&amp;action=edit&amp;section=9" title="Edit section: Second Implementation (Using Stacks)">edit</a><span class="mw-editsection-bracket">]</span></span></h5>
+<h5><span id="Second_Implementation_.28Using_Stacks.29"></span><span class="mw-headline" id="Second_Implementation_(Using_Stacks)">Second Implementation (Using Stacks)</span></h5>
 <div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span></span><span class="c1">// Global variable, tower [1:3] are three towers</span>
 <span class="n">arrayStack</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">tower</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span>
 <span class="kt">void</span> <span class="nf">TowerofHanoi</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
@@ -596,13 +399,11 @@ Thus it makes more sense to implement with Vector (see StackVector) to allow unb
   </semantics>
 </math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/8226f30650ee4fe4e640c6d2798127e80e9c160d" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:2.381ex; height:2.343ex;" alt="2^{n}"/></span>). So it's obvious that problem can only be solved for small values of n (generally n &lt;= 30). 
 In case of the monks, the number of turns taken to transfer 64 disks, by following the above rules, will be 18,446,744,073,709,551,615; which will surely take a lot of time!!
-</p><p><sup id="cite_ref-Dromey_1-1" class="reference"><a href="#cite_note-Dromey-1">&#91;1&#93;</a></sup>
-</p><p><sup id="cite_ref-ReferenceA_2-1" class="reference"><a href="#cite_note-ReferenceA-2">&#91;2&#93;</a></sup>
 </p>
-<h4><span class="mw-headline" id="Expression_evaluation_and_syntax_parsing">Expression evaluation and syntax parsing</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Data_Structures/Stacks_and_Queues&amp;action=edit&amp;section=10" title="Edit section: Expression evaluation and syntax parsing">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
-<p>Calculators employing <a href="https://en.wikipedia.org/wiki/reverse_Polish_notation" class="extiw" title="w:reverse Polish notation">reverse Polish notation</a> use a stack structure to hold values. Expressions can be represented in prefix, postfix or infix notations. Conversion from one form of the expression to another form may be accomplished using a stack. Many compilers use a stack for parsing the syntax of expressions, program blocks etc. before translating into low level code. Most of the programming languages are <a href="https://en.wikipedia.org/wiki/context-free_grammar" class="extiw" title="w:context-free grammar">context-free languages</a> allowing them to be parsed with stack based machines.
+<h4><span class="mw-headline" id="Expression_evaluation_and_syntax_parsing">Expression evaluation and syntax parsing</span><span class="mw-editsection"></span></h4>
+<p>Calculators employing reverse Polish notation use a stack structure to hold values. Expressions can be represented in prefix, postfix or infix notations. Conversion from one form of the expression to another form may be accomplished using a stack. Many compilers use a stack for parsing the syntax of expressions, program blocks etc. before translating into low level code. Most of the programming languages are context-free languages allowing them to be parsed with stack based machines.
 </p>
-<h5><span class="mw-headline" id="Evaluation_of_an_Infix_Expression_that_is_Fully_Parenthesized">Evaluation of an Infix Expression that is Fully Parenthesized</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Data_Structures/Stacks_and_Queues&amp;action=edit&amp;section=11" title="Edit section: Evaluation of an Infix Expression that is Fully Parenthesized">edit</a><span class="mw-editsection-bracket">]</span></span></h5>
+<h5><span class="mw-headline" id="Evaluation_of_an_Infix_Expression_that_is_Fully_Parenthesized">Evaluation of an Infix Expression that is Fully Parenthesized</span></h5>
 <p><b>Input:</b> (((2 * 5) - (1 * 2)) / (9 - 7))
 </p><p><b>Output:</b> 4
 </p><p><b>Analysis:</b>  Five types of input characters
@@ -860,10 +661,10 @@ In case of the monks, the number of turns taken to transfer 64 disks, by followi
 <span class="p">}</span>
 </pre></div>
 <p><b>Output of the program:</b>
-</p><p>Input entered at the command line: (((2 * 5) - (1 * 2)) / (9 - 7))
-<sup id="cite_ref-Gopal_3-0" class="reference"><a href="#cite_note-Gopal-3">&#91;3&#93;</a></sup>
 </p>
-<h5><span class="mw-headline" id="Evaluation_of_Infix_Expression_which_is_not_fully_parenthesized">Evaluation of Infix Expression which is not fully parenthesized</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Data_Structures/Stacks_and_Queues&amp;action=edit&amp;section=12" title="Edit section: Evaluation of Infix Expression which is not fully parenthesized">edit</a><span class="mw-editsection-bracket">]</span></span></h5>
+<p>Input entered at the command line: (((2 * 5) - (1 * 2)) / (9 - 7))</p>
+
+<h5><span class="mw-headline" id="Evaluation_of_Infix_Expression_which_is_not_fully_parenthesized">Evaluation of Infix Expression which is not fully parenthesized</span></h5>
 <p><b>Input:</b> (2 * 5 - 1 * 2) / (11 - 9)
 </p><p><b>Output:</b> 4
 </p><p><b>Analysis:</b> There are five types of input characters which are:
@@ -1178,10 +979,8 @@ By implementing the priority rule for operators, we have a solution to this prob
 </pre></div>
 <p><b>Output of the program:</b>
 </p><p><i>Input entered at the command line:</i> (2 * 5 - 1 * 2) / (11 - 9)
-</p><p><i>Output:</i> 4
-<sup id="cite_ref-Gopal_3-1" class="reference"><a href="#cite_note-Gopal-3">&#91;3&#93;</a></sup>
-</p>
-<h5><span class="mw-headline" id="Evaluation_of_Prefix_Expression">Evaluation of Prefix Expression</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Data_Structures/Stacks_and_Queues&amp;action=edit&amp;section=13" title="Edit section: Evaluation of Prefix Expression">edit</a><span class="mw-editsection-bracket">]</span></span></h5>
+</p><p><i>Output:</i> 4</p>
+<h5><span class="mw-headline" id="Evaluation_of_Prefix_Expression">Evaluation of Prefix Expression</span></span></h5>
 <p><b>Input:</b> x + 6 * ( y + z ) ^ 3
 </p><p><i>Output:'</i> 4
 </p><p><b>Analysis:</b> There are three types of input characters
@@ -1487,11 +1286,10 @@ By implementing the priority rule for operators, we have a solution to this prob
 <span class="p">}</span>
 </pre></div>
 <p><b>Output of the program:</b>
-</p><p>Input entered at the command line: / - * 2  5 * 1  2 - 11  9
-</p><p>Output: 4
-<sup id="cite_ref-Gopal_3-2" class="reference"><a href="#cite_note-Gopal-3">&#91;3&#93;</a></sup>
+</p><p>Input entered at the command line: / - * 2  5 * 1  2 - 11  9</p>
+<p>Output: 4
 </p>
-<h4><span class="mw-headline" id="Conversion_of_an_Infix_expression_that_is_fully_parenthesized_into_a_Postfix_expression">Conversion of an Infix expression that is fully parenthesized into a Postfix expression</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Data_Structures/Stacks_and_Queues&amp;action=edit&amp;section=14" title="Edit section: Conversion of an Infix expression that is fully parenthesized into a Postfix expression">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<h4><span class="mw-headline" id="Conversion_of_an_Infix_expression_that_is_fully_parenthesized_into_a_Postfix_expression">Conversion of an Infix expression that is fully parenthesized into a Postfix expression</span></span></h4>
 <p><b>Input:</b> (((8 + 1) - (7 - 4)) / (11 - 9))
 </p><p><b>Output:</b> 8 1 + 7 4 - - 11 9 - /
 </p><p><b>Analysis:</b>  There are five types of input characters which are:
@@ -1770,287 +1568,7 @@ By implementing the priority rule for operators, we have a solution to this prob
 </td>
 <td>
 </td></tr></tbody></table>
-<h4><span class="mw-headline" id="Rearranging_railroad_cars">Rearranging railroad cars</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Data_Structures/Stacks_and_Queues&amp;action=edit&amp;section=15" title="Edit section: Rearranging railroad cars">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
-<h5><span class="mw-headline" id="Problem_Description">Problem Description</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Data_Structures/Stacks_and_Queues&amp;action=edit&amp;section=16" title="Edit section: Problem Description">edit</a><span class="mw-editsection-bracket">]</span></span></h5>
-<p>It's a very nice application of stacks. Consider that a freight train has <i><b>n</b></i> railroad cars. Each to be left at different station. They're numbered 1 through n &amp; freight train visits these stations in order n through 1. Obviously, the railroad cars are labeled by their destination.To facilitate removal of the cars from the train, we must rearrange them in ascending order of their number(i.e. 1 through n). When cars are in this order, they can be detached at each station. We rearrange cars at a shunting yard that has <i><b>input track</b></i>, <i><b>output track</b></i> &amp;amp; <i><b>k</b></i> holding tracks between input &amp; output tracks(i.e. <i><b>holding track</b></i>).
-</p>
-<h5><span class="mw-headline" id="Solution_Strategy">Solution Strategy</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Data_Structures/Stacks_and_Queues&amp;action=edit&amp;section=17" title="Edit section: Solution Strategy">edit</a><span class="mw-editsection-bracket">]</span></span></h5>
-<p>To rearrange cars, we examine the cars on the input from front to back. If the car being examined is next one in the output arrangement, we move it directly to <i><b>output track</b></i>. If not, we move it to the <i><b>holding track</b></i> &amp; leave it there until it's time to place it to the <i><b>output track</b></i>. The holding tracks operate in a LIFO manner as the cars enter &amp; leave these tracks from top. When rearranging cars only following moves are permitted:
-</p>
-<ul><li>A car may be moved from front (i.e. right end) of the input track to the top of one of the <i><b>holding tracks</b></i> or to the left end of the output track.</li>
-<li>A car may be moved from the top of <i><b>holding track</b></i> to left end of the <i><b>output track</b></i>.</li></ul>
-<p>The figure shows a shunting yard with <i><b>k</b></i> = 3, holding tracks <i><b>H1</b></i>, <i><b>H2</b></i> &amp; <i><b>H3</b></i>, also <i><b>n</b></i> = 9. The <i><b>n</b></i> cars of freight train begin in the input track &amp; are to end up in the output track in order 1 through <i><b>n</b></i> from right to left. The cars initially are in the order 5,8,1,7,4,2,9,6,3 from back to front. Later cars are rearranged in desired order.
-</p>
-<h5><span class="mw-headline" id="A_Three_Track_Example">A Three Track Example</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Data_Structures/Stacks_and_Queues&amp;action=edit&amp;section=18" title="Edit section: A Three Track Example">edit</a><span class="mw-editsection-bracket">]</span></span></h5>
-<div class="thumb tright"><div class="thumbinner" style="width:222px;"><a href="/wiki/File:Railroadcars2.png" class="image"><img alt="" src="//upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Railroadcars2.png/220px-Railroadcars2.png" decoding="async" width="220" height="250" class="thumbimage" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Railroadcars2.png/330px-Railroadcars2.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Railroadcars2.png/440px-Railroadcars2.png 2x" data-file-width="1034" data-file-height="1177" /></a>  <div class="thumbcaption"><div class="magnify"><a href="/wiki/File:Railroadcars2.png" class="internal" title="Enlarge"></a></div>Railroad cars example</div></div></div>
-<ul><li>Consider the input arrangement from figure, here we note that the car 3 is at the front, so it can't be output yet, as it to be preceded by cars 1 &amp; 2. So car 3 is detached &amp; moved to holding track <i><b>H1</b></i>.</li>
-<li>The next car 6 can't be output &amp; it is moved to holding track <i><b>H2</b></i>. Because we have to output car 3 before car 6 &amp; this will not possible if we move car 6 to holding track <i><b>H1</b></i>.</li>
-<li>Now it's obvious that we move car 9 to <i><b>H3</b></i>.</li></ul>
-<p>The requirement of rearrangement of cars on any holding track is that the cars should be preferred  to arrange in ascending order from top to bottom. 
-</p>
-<ul><li>So car 2 is now moved to holding track H1 so that it satisfies the previous statement. If we move car 2 to H2 or H3, then we've no place to move cars 4,5,7,8.<i><b>The least restrictions on future car placement arise when the new car λ is moved to the holding track that has a car at its top with smallest label Ψ such that λ &lt; Ψ. We may call it an assignment rule to decide whether a particular car belongs to a specific holding track.</b></i></li>
-<li>When car 4 is considered, there are three places to move the car H1,H2,H3. The top of these tracks are 2,6,9.So using above mentioned Assignment rule, we move car 4 to H2.</li>
-<li>The car 7 is moved to H3.</li>
-<li>The next car 1 has the least label, so it's moved to output track.</li>
-<li>Now it's time for car 2 &amp; 3 to output which are from H1(in short all the cars from H1 are appended to car 1 on output track).</li></ul>
-<p>The car 4 is moved to output track. No other cars can be moved to output track at this time.
-</p>
-<ul><li>The next car 8 is moved to holding track H1.</li>
-<li>Car 5 is output from input track. Car 6 is moved to output track from H2, so is the 7 from H3,8 from H1 &amp; 9 from H3.</li></ul>
-<h4><span class="mw-headline" id="Quicksort">Quicksort</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Data_Structures/Stacks_and_Queues&amp;action=edit&amp;section=19" title="Edit section: Quicksort">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
-<p>Sorting means arranging a group of elements in a particular order. Be it ascending or descending, by cardinality or alphabetical order or variations thereof.  The resulting ordering possibilities will only be limited by the type of the source elements.
-</p><p>Quicksort is an algorithm of the <i>divide and conquer</i> type. In this method, to sort a set of numbers, we reduce it to two smaller sets, and then sort these smaller sets.
-</p><p>This can be explained with the help of the following example:
-</p><p>Suppose <b>A</b> is a list of the following numbers:
-</p><p><a href="/wiki/File:Quicksort1.pdf" class="image"><img alt="Quicksort1.pdf" src="//upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Quicksort1.pdf/page1-500px-Quicksort1.pdf.jpg" decoding="async" width="500" height="118" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Quicksort1.pdf/page1-750px-Quicksort1.pdf.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Quicksort1.pdf/page1-1000px-Quicksort1.pdf.jpg 2x" data-file-width="1275" data-file-height="300" /></a>
-</p><p>In the reduction step, we find the final position of one of the numbers. In this case, let us assume that we have to find the final position of 48, which is the first number in the list.
-</p><p>To accomplish this, we adopt the following method. Begin with the last number, and move from right to left. Compare each number with 48. If the number is smaller than 48, we stop at that number and swap it with 48.
-</p><p>In our case, the number is 24. Hence, we swap 24 and 48.
-</p><p><a href="/wiki/File:Quicksort2.pdf" class="image"><img alt="Quicksort2.pdf" src="//upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Quicksort2.pdf/page1-500px-Quicksort2.pdf.jpg" decoding="async" width="500" height="118" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Quicksort2.pdf/page1-750px-Quicksort2.pdf.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Quicksort2.pdf/page1-1000px-Quicksort2.pdf.jpg 2x" data-file-width="1275" data-file-height="300" /></a>
-</p><p>The numbers 96 and 72 to the right of 48, are greater than 48.  Now beginning with 24, scan the numbers in the opposite direction, that is from left to right. Compare every number with 48 until you find a number that is greater than 48.
-</p><p>In this case, it is 60. Therefore we swap 48 and 60.
-</p><p><a href="/wiki/File:Quicksort3.pdf" class="image"><img alt="Quicksort3.pdf" src="//upload.wikimedia.org/wikipedia/commons/thumb/1/15/Quicksort3.pdf/page1-500px-Quicksort3.pdf.jpg" decoding="async" width="500" height="118" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/1/15/Quicksort3.pdf/page1-750px-Quicksort3.pdf.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/1/15/Quicksort3.pdf/page1-1000px-Quicksort3.pdf.jpg 2x" data-file-width="1275" data-file-height="300" /></a>
-</p><p>Note that the numbers 12, 24 and 36 to the left of 48 are all smaller than 48. Now, start scanning numbers from 60, in the right to left direction. As soon as you find lesser number, swap it with 48.
-</p><p>In this case, it is 44. Swap it with 48. The final result is:
-</p><p><a href="/wiki/File:Quicksort4.pdf" class="image"><img alt="Quicksort4.pdf" src="//upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Quicksort4.pdf/page1-500px-Quicksort4.pdf.jpg" decoding="async" width="500" height="118" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Quicksort4.pdf/page1-750px-Quicksort4.pdf.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Quicksort4.pdf/page1-1000px-Quicksort4.pdf.jpg 2x" data-file-width="1275" data-file-height="300" /></a>
-</p><p>Now, beginning with 44, scan the list from left to right, until you find a number greater than 48.
-</p><p>Such a number is 84. Swap it with 48. The final result is:
-</p><p><a href="/wiki/File:Quicksort5.pdf" class="image"><img alt="Quicksort5.pdf" src="//upload.wikimedia.org/wikipedia/commons/thumb/3/30/Quicksort5.pdf/page1-500px-Quicksort5.pdf.jpg" decoding="async" width="500" height="118" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/3/30/Quicksort5.pdf/page1-750px-Quicksort5.pdf.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/3/30/Quicksort5.pdf/page1-1000px-Quicksort5.pdf.jpg 2x" data-file-width="1275" data-file-height="300" /></a>
-</p><p>Now, beginning with 84, traverse the list from right to left, until you reach a number lesser than 48. We do not find such a number before reaching 48. This means that all the numbers in the list have been scanned and compared with 48. Also, we notice that all numbers less than 48 are to the left of it, and all numbers greater than 48, are to its right.
-</p><p>The final partitions look as follows:
-</p><p><a href="/wiki/File:Quicksort6.pdf" class="image"><img alt="Quicksort6.pdf" src="//upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Quicksort6.pdf/page1-500px-Quicksort6.pdf.jpg" decoding="async" width="500" height="132" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Quicksort6.pdf/page1-750px-Quicksort6.pdf.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Quicksort6.pdf/page1-1000px-Quicksort6.pdf.jpg 2x" data-file-width="1275" data-file-height="337" /></a>
-</p><p>Therefore, 48 has been placed in its proper position and now our task is reduced to sorting the two partitions.
-This above step of creating partitions can be repeated with every partition containing 2 or more elements. As we can process only a single partition at a time, we should be able to keep track of the other partitions, for future processing.
-</p><p>This is done by using two <b>stacks</b> called LOWERBOUND and UPPERBOUND, to temporarily store these partitions. The addresses of the first and last elements of the partitions are pushed into the LOWERBOUND and UPPERBOUND stacks respectively. Now, the above reduction step is applied to the partitions only after its boundary values are <i>popped</i> from the stack.
-</p><p>We can understand this from the following example:
-</p><p>Take the above list A with 12 elements. The algorithm starts by pushing the boundary values of A, that is 1 and 12 into the LOWERBOUND and UPPERBOUND stacks respectively.  Therefore the stacks look as follows:
-</p>
-<pre>    LOWERBOUND:  1                   UPPERBOUND:  12
-</pre>
-<p>To perform the reduction step, the values of the stack top are popped from the stack. Therefore, both the stacks become empty.
-</p>
-<pre>    LOWERBOUND:  {empty}                UPPERBOUND: {empty}
-</pre>
-<p>Now, the reduction step causes 48 to be fixed to the 5th position and creates two partitions, one from position 1 to 4 and the other from position 6 to 12. Hence, the values 1 and 6 are pushed into the LOWERBOUND stack and 4 and 12 are pushed into the UPPERBOUND stack.
-</p>
-<pre>    LOWERBOUND:  1, 6                   UPPERBOUND: 4, 12
-</pre>
-<p>For applying the reduction step again, the values at the stack top are popped. Therefore, the values 6 and 12 are popped. Therefore the stacks look like:
-</p>
-<pre>    LOWERBOUND:  1                      UPPERBOUND: 4
-</pre>
-<p>The reduction step is now applied to the second partition, that is from the 6th to 12th element.
-</p><p><a href="/wiki/File:Quicksort7.pdf" class="image"><img alt="Quicksort7.pdf" src="//upload.wikimedia.org/wikipedia/commons/thumb/5/55/Quicksort7.pdf/page1-500px-Quicksort7.pdf.jpg" decoding="async" width="500" height="270" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/5/55/Quicksort7.pdf/page1-750px-Quicksort7.pdf.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/5/55/Quicksort7.pdf/page1-1000px-Quicksort7.pdf.jpg 2x" data-file-width="1275" data-file-height="689" /></a>
-</p><p>After the reduction step, 98 is fixed in the 11th position. So, the second partition has only one element. Therefore, we push the upper and lower boundary values of the first partition onto the stack. So, the stacks are as follows:
-</p>
-<pre>    LOWERBOUND:  1, 6                   UPPERBOUND:  4, 10
-</pre>
-<p>The processing proceeds in the following way and ends when the stacks do not contain any upper and lower bounds of the partition to be processed, and the list gets sorted.
-</p>
-<h4><span class="mw-headline" id="The_Stock_Span_Problem">The Stock Span Problem</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Data_Structures/Stacks_and_Queues&amp;action=edit&amp;section=20" title="Edit section: The Stock Span Problem">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
-<div class="thumb tright"><div class="thumbinner" style="width:327px;"><a href="/wiki/File:Stockspan.svg" class="image"><img alt="" src="//upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Stockspan.svg/325px-Stockspan.svg.png" decoding="async" width="325" height="181" class="thumbimage" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Stockspan.svg/488px-Stockspan.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Stockspan.svg/650px-Stockspan.svg.png 2x" data-file-width="800" data-file-height="446" /></a>  <div class="thumbcaption"><div class="magnify"><a href="/wiki/File:Stockspan.svg" class="internal" title="Enlarge"></a></div>The Stockspan Problem</div></div></div>
-<p>In the stock span problem, we will solve a financial problem with the help of stacks.
-</p><p>Suppose, for a stock, we have a series of <i>n</i> daily price quotes, the <i>span</i> of the stock's price on a particular day is defined as the maximum number of consecutive days for which the price of the stock on the current day is less than or equal to its price on that day.
-</p>
-<h5><span class="mw-headline" id="An_algorithm_which_has_Quadratic_Time_Complexity">An algorithm which has Quadratic Time Complexity</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Data_Structures/Stacks_and_Queues&amp;action=edit&amp;section=21" title="Edit section: An algorithm which has Quadratic Time Complexity">edit</a><span class="mw-editsection-bracket">]</span></span></h5>
-<p><b>Input:</b> An array <i>P</i> with <i>n</i> elements
-</p><p><b>Output:</b> An array <i>S</i>  of <i>n</i> elements such that S[i] is the largest integer k such that k &lt;= i + 1 and P[j] &lt;= P[i] for j = i - k + 1,.....,i
-</p><p><b>Algorithm:</b>
-</p>
-<pre>       1. Initialize an array P which contains the daily prices of the stocks
-       2. Initialize an array S which will store the span of the stock
-       3. <b>for</b> i = 0 to i = n - 1
-               3.1 Initialize k to zero
-               3.2 Done with a <i>false</i> condition
-               3.3 <b>repeat</b>
-                     3.3.1 if ( P[i - k] &lt;= P[i)] then
-                               Increment k by 1
-                     3.3.2 else
-                               Done with <i>true</i> condition
-               3.4 Till (k &gt; i) or done with processing
-                     Assign value of k to S[i] to get the span of the stock
-       4. Return array S
-</pre>
-<p>Now, analyzing this algorithm for running time, we observe:
-</p>
-<ul><li>We have initialized the array S at the beginning and returned it at the end. This is a constant time operation, hence takes <i>O</i>(n) time</li>
-<li>The <i>repeat</i> loop is nested within the <i>for</i> loop. The <i>for</i> loop, whose counter is <i>i</i> is executed n times. The statements which are not in the repeat loop, but in the for loop are executed <i>n</i> times. Therefore these statements and the incrementing and condition testing of i take <i>O</i>(n) time.</li>
-<li>In repetition of i for the outer for loop, the body of the inner <i>repeat</i> loop is executed maximum i + 1 times. In the worst case, element S[i] is greater than all the previous elements. So, testing for the if condition, the statement after that, as well as testing the until condition, will be performed i + 1 times during iteration i for the outer for loop. Hence, the total time taken by the inner loop is <i>O</i>(n(n + 1)/2), which is <i>O</i>(<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle n^{2}}">
-  <semantics>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mstyle displaystyle="true" scriptlevel="0">
-        <msup>
-          <mi>n</mi>
-          <mrow class="MJX-TeXAtom-ORD">
-            <mn>2</mn>
-          </mrow>
-        </msup>
-      </mstyle>
-    </mrow>
-    <annotation encoding="application/x-tex">{\displaystyle n^{2}}</annotation>
-  </semantics>
-</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/ac9810bbdafe4a6a8061338db0f74e25b7952620" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:2.449ex; height:2.676ex;" alt="n^{2}"/></span>)</li></ul>
-<p>The running time of all these steps is calculated by adding the time taken by all these three steps. The first two terms are <i>O</i>(<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle n}">
-  <semantics>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mstyle displaystyle="true" scriptlevel="0">
-        <mi>n</mi>
-      </mstyle>
-    </mrow>
-    <annotation encoding="application/x-tex">{\displaystyle n}</annotation>
-  </semantics>
-</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a601995d55609f2d9f5e233e36fbe9ea26011b3b" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:1.395ex; height:1.676ex;" alt="n"/></span>) while the last term is <i>O</i>(<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle n^{2}}">
-  <semantics>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mstyle displaystyle="true" scriptlevel="0">
-        <msup>
-          <mi>n</mi>
-          <mrow class="MJX-TeXAtom-ORD">
-            <mn>2</mn>
-          </mrow>
-        </msup>
-      </mstyle>
-    </mrow>
-    <annotation encoding="application/x-tex">{\displaystyle n^{2}}</annotation>
-  </semantics>
-</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/ac9810bbdafe4a6a8061338db0f74e25b7952620" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:2.449ex; height:2.676ex;" alt="n^{2}"/></span>). Therefore the total running time of the algorithm is <i>O</i>(<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle n^{2}}">
-  <semantics>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mstyle displaystyle="true" scriptlevel="0">
-        <msup>
-          <mi>n</mi>
-          <mrow class="MJX-TeXAtom-ORD">
-            <mn>2</mn>
-          </mrow>
-        </msup>
-      </mstyle>
-    </mrow>
-    <annotation encoding="application/x-tex">{\displaystyle n^{2}}</annotation>
-  </semantics>
-</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/ac9810bbdafe4a6a8061338db0f74e25b7952620" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:2.449ex; height:2.676ex;" alt="n^{2}"/></span>).
-</p>
-<h5><span class="mw-headline" id="An_algorithm_that_has_Linear_Time_Complexity">An algorithm that has Linear Time Complexity</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Data_Structures/Stacks_and_Queues&amp;action=edit&amp;section=22" title="Edit section: An algorithm that has Linear Time Complexity">edit</a><span class="mw-editsection-bracket">]</span></span></h5>
-<p>In order to calculate the span more efficiently, we see that the span on a particular day can be easily calculated if we know the closest day before <i>i</i>, such that the price of the stocks on that day was higher than the price of the stocks on the present day. If there exists such a day, we can represent it by h(i) and initialize h(i) to be -1.
-</p><p>Therefore the span of a particular day is given by the formula,
-s = i - h(i).
-</p><p>To implement this logic, we use a stack as an abstract data type to store the days i, h(i), h(h(i)) and so on. When we go from day i-1 to i, we pop the days when the price of the stock was less than or equal to p(i) and then push the value of day <i>i</i> back into the stack.
-</p><p>Here, we assume that the stack is implemented by operations that take <i>O</i>(1) that is constant time. The algorithm is as follows:
-</p><p><b>Input:</b> An array P with <i>n</i> elements and an empty stack N
-</p><p><b>Output:</b> An array <i>S</i>  of <i>n</i> elements such that P[i] is the largest integer k such that k &lt;= i + 1 and P[y] &lt;= P[i] for j = i - k + 1,.....,i
-</p><p><b>Algorithm:</b>
-</p>
-<pre>       1. Initialize an array P which contains the daily prices of the stocks
-       2. Initialize an array S which will store the span of the stock
-       3. <b>for</b> i = 0 to i = n - 1
-               3.1 Initialize k to zero
-               3.2 Done with a <i>false</i> condition
-               3.3 <b>while not</b> (Stack N is empty or done with processing)
-                     3.3.1 if ( P[i] &gt;= P[N.top())] then
-                               Pop a value from stack N
-                     3.3.2 else
-                               Done with <i>true</i> condition
-               3.4 if Stack N is empty
-                        3.4.1 Initialize h to -1
-               3.5 else
-                        3.5.1 Initialize stack top to h
-                        3.5.2 Put the value of h - i in S[i]
-                        3.5.3 Push the value of i in N 
-       4. Return array S
-</pre>
-<p>Now, analyzing this algorithm for running time, we observe:
-</p>
-<ul><li>We have initialized the array S at the beginning and returned it at the end. This is a constant time operation, hence takes <i>O</i>(n) time</li>
-<li>The <i>while</i> loop is nested within the <i>for</i> loop. The <i>for</i> loop, whose counter is <i>i</i> is executed n times. The statements which are not in the repeat loop, but in the for loop are executed <i>n</i> times. Therefore these statements and the incrementing and condition testing of i take <i>O</i>(n) time.</li>
-<li>Now, observe the inner while loop during <i>i</i> repetitions of the for loop. The statement <i>done with a true condition</i> is done at most once, since it causes an exit from the loop. Let us say that t(i) is the number of times statement <i>Pop a value from stack N</i> is executed. So it becomes clear that <i>while not (Stack N is empty or done with processing)</i> is tested maximum t(i) + 1 times.</li>
-<li>Adding the running time of all the operations in the while loop, we get:</li></ul>
-<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle \sum _{i=0}^{n-1}t(i)+1}">
-  <semantics>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mstyle displaystyle="true" scriptlevel="0">
-        <munderover>
-          <mo>&#x2211;<!-- ∑ --></mo>
-          <mrow class="MJX-TeXAtom-ORD">
-            <mi>i</mi>
-            <mo>=</mo>
-            <mn>0</mn>
-          </mrow>
-          <mrow class="MJX-TeXAtom-ORD">
-            <mi>n</mi>
-            <mo>&#x2212;<!-- − --></mo>
-            <mn>1</mn>
-          </mrow>
-        </munderover>
-        <mi>t</mi>
-        <mo stretchy="false">(</mo>
-        <mi>i</mi>
-        <mo stretchy="false">)</mo>
-        <mo>+</mo>
-        <mn>1</mn>
-      </mstyle>
-    </mrow>
-    <annotation encoding="application/x-tex">{\displaystyle \sum _{i=0}^{n-1}t(i)+1}</annotation>
-  </semantics>
-</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/912abd293e61d51cfeac300cecb56bce26da8c34" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -3.005ex; width:11.196ex; height:7.343ex;" alt="\sum _{{i=0}}^{{n-1}}t(i)+1"/></span></dd></dl>
-<ul><li>An element once popped from the stack N is never pushed back into it. Therefore,</li></ul>
-<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle \sum _{i=1}^{n-1}t(i)}">
-  <semantics>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mstyle displaystyle="true" scriptlevel="0">
-        <munderover>
-          <mo>&#x2211;<!-- ∑ --></mo>
-          <mrow class="MJX-TeXAtom-ORD">
-            <mi>i</mi>
-            <mo>=</mo>
-            <mn>1</mn>
-          </mrow>
-          <mrow class="MJX-TeXAtom-ORD">
-            <mi>n</mi>
-            <mo>&#x2212;<!-- − --></mo>
-            <mn>1</mn>
-          </mrow>
-        </munderover>
-        <mi>t</mi>
-        <mo stretchy="false">(</mo>
-        <mi>i</mi>
-        <mo stretchy="false">)</mo>
-      </mstyle>
-    </mrow>
-    <annotation encoding="application/x-tex">{\displaystyle \sum _{i=1}^{n-1}t(i)}</annotation>
-  </semantics>
-</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/c969415193ad945ac20510559c29320270b2fc5d" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -3.005ex; width:7.193ex; height:7.343ex;" alt="\sum _{{i=1}}^{{n-1}}t(i)"/></span></dd></dl>
-<p>So, the running time of all the statements in the while loop is <i>O</i>(<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle n}">
-  <semantics>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mstyle displaystyle="true" scriptlevel="0">
-        <mi>n</mi>
-      </mstyle>
-    </mrow>
-    <annotation encoding="application/x-tex">{\displaystyle n}</annotation>
-  </semantics>
-</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a601995d55609f2d9f5e233e36fbe9ea26011b3b" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:1.395ex; height:1.676ex;" alt="n"/></span>)
-</p><p>The running time of all the steps in the algorithm is calculated by adding the time taken by all these steps. The run time of each step is <i>O</i>(<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle n}">
-  <semantics>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mstyle displaystyle="true" scriptlevel="0">
-        <mi>n</mi>
-      </mstyle>
-    </mrow>
-    <annotation encoding="application/x-tex">{\displaystyle n}</annotation>
-  </semantics>
-</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a601995d55609f2d9f5e233e36fbe9ea26011b3b" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:1.395ex; height:1.676ex;" alt="n"/></span>). Hence the running time complexity of this algorithm is <i>O</i>(<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle n}">
-  <semantics>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mstyle displaystyle="true" scriptlevel="0">
-        <mi>n</mi>
-      </mstyle>
-    </mrow>
-    <annotation encoding="application/x-tex">{\displaystyle n}</annotation>
-  </semantics>
-</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a601995d55609f2d9f5e233e36fbe9ea26011b3b" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:1.395ex; height:1.676ex;" alt="n"/></span>).
-</p>
-<h3><span class="mw-headline" id="Related_Links">Related Links</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Data_Structures/Stacks_and_Queues&amp;action=edit&amp;section=23" title="Edit section: Related Links">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<ul><li><a href="https://en.wikipedia.org/wiki/Stack_(data_structure)" class="extiw" title="wikipedia:Stack (data structure)">Stack (Wikipedia)</a><b></b></li></ul>
-<h3><span class="mw-headline" id="Queues">Queues</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Data_Structures/Stacks_and_Queues&amp;action=edit&amp;section=24" title="Edit section: Queues">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<h3><span class="mw-headline" id="Queues">Queues</span><span class="mw-editsection"><span class="mw-editsection-bracket"></span></h3>
 <p>A queue is a basic data structure that is used throughout programming.  You can think of it as a line in a grocery store.  The first one in the line is the first one to be served.Just like a queue.
 </p><p>A queue is also called a FIFO (First In First Out) to demonstrate the way it accesses data.
 </p>
@@ -2099,7 +1617,7 @@ s = i - h(i).
 </math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/221c692848ccee2e02507eded3adfb7c2f7d5fc8" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:6.293ex; height:2.843ex;" alt="O(N)."/></span>
 </p>
 </div>
-<h4><span class="mw-headline" id="Linked_List_Implementation_2">Linked List Implementation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Data_Structures/Stacks_and_Queues&amp;action=edit&amp;section=25" title="Edit section: Linked List Implementation">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+<h4><span class="mw-headline" id="Linked_List_Implementation_2">Linked List Implementation</span><span class="mw-editsection"><span class="mw-editsection-bracket"></span></h4>
 <p>The basic linked list implementation uses a singly-linked list with a tail pointer to keep track of the back of the queue.
 </p>
 <pre>type Queue&lt;item_type&gt;
@@ -2156,286 +1674,5 @@ s = i - h(i).
     return list.get-size()
   end method
 end type
-</pre>
-<p><br />
-</p>
-<h5><span class="mw-headline" id="Performance_Analysis_2">Performance Analysis</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Data_Structures/Stacks_and_Queues&amp;action=edit&amp;section=26" title="Edit section: Performance Analysis">edit</a><span class="mw-editsection-bracket">]</span></span></h5>
-<p>In a linked list, accessing the first element is an <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle O(1)}">
-  <semantics>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mstyle displaystyle="true" scriptlevel="0">
-        <mi>O</mi>
-        <mo stretchy="false">(</mo>
-        <mn>1</mn>
-        <mo stretchy="false">)</mo>
-      </mstyle>
-    </mrow>
-    <annotation encoding="application/x-tex">{\displaystyle O(1)}</annotation>
-  </semantics>
-</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/e66384bc40452c5452f33563fe0e27e803b0cc21" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:4.745ex; height:2.843ex;" alt="O(1)"/></span> operation because the list contains a pointer directly to it. Therefore, enqueue, front, and dequeue are a quick <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle O(1)}">
-  <semantics>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mstyle displaystyle="true" scriptlevel="0">
-        <mi>O</mi>
-        <mo stretchy="false">(</mo>
-        <mn>1</mn>
-        <mo stretchy="false">)</mo>
-      </mstyle>
-    </mrow>
-    <annotation encoding="application/x-tex">{\displaystyle O(1)}</annotation>
-  </semantics>
-</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/e66384bc40452c5452f33563fe0e27e803b0cc21" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:4.745ex; height:2.843ex;" alt="O(1)"/></span> operations.
-</p><p>The checks for empty/fullness as done here are also <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle O(1)}">
-  <semantics>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mstyle displaystyle="true" scriptlevel="0">
-        <mi>O</mi>
-        <mo stretchy="false">(</mo>
-        <mn>1</mn>
-        <mo stretchy="false">)</mo>
-      </mstyle>
-    </mrow>
-    <annotation encoding="application/x-tex">{\displaystyle O(1)}</annotation>
-  </semantics>
-</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/e66384bc40452c5452f33563fe0e27e803b0cc21" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:4.745ex; height:2.843ex;" alt="O(1)"/></span>.
-</p><p>The performance of <code>getSize()</code> depends on the performance of the corresponding operation in the linked list implementation. It could be either <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle O(n)}">
-  <semantics>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mstyle displaystyle="true" scriptlevel="0">
-        <mi>O</mi>
-        <mo stretchy="false">(</mo>
-        <mi>n</mi>
-        <mo stretchy="false">)</mo>
-      </mstyle>
-    </mrow>
-    <annotation encoding="application/x-tex">{\displaystyle O(n)}</annotation>
-  </semantics>
-</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/34109fe397fdcff370079185bfdb65826cb5565a" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:4.977ex; height:2.843ex;" alt="O(n)"/></span>, or <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle O(1)}">
-  <semantics>
-    <mrow class="MJX-TeXAtom-ORD">
-      <mstyle displaystyle="true" scriptlevel="0">
-        <mi>O</mi>
-        <mo stretchy="false">(</mo>
-        <mn>1</mn>
-        <mo stretchy="false">)</mo>
-      </mstyle>
-    </mrow>
-    <annotation encoding="application/x-tex">{\displaystyle O(1)}</annotation>
-  </semantics>
-</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/e66384bc40452c5452f33563fe0e27e803b0cc21" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:4.745ex; height:2.843ex;" alt="O(1)"/></span>, depending on what time/space tradeoff is made. Most of the time, users of a Queue do not use the <code>getSize()</code> operation, and so a bit of space can be saved by not optimizing it.
-</p>
-<h4><span class="mw-headline" id="Circular_Array_Implementation">Circular Array Implementation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Data_Structures/Stacks_and_Queues&amp;action=edit&amp;section=27" title="Edit section: Circular Array Implementation">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
-<h5><span class="mw-headline" id="Performance_Analysis_3">Performance Analysis</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Data_Structures/Stacks_and_Queues&amp;action=edit&amp;section=28" title="Edit section: Performance Analysis">edit</a><span class="mw-editsection-bracket">]</span></span></h5>
-<h4><span class="mw-headline" id="Priority_Queue_Implementation">Priority Queue Implementation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Data_Structures/Stacks_and_Queues&amp;action=edit&amp;section=29" title="Edit section: Priority Queue Implementation">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
-<div style="clear: both"></div>
-<table style="background: #ffd; border: 1px solid #aaaaaa; padding: 6pt; margin: 12pt 8%; width: 60%; margin: auto;" class="notice noprint notice-todo">
-<tbody><tr>
-<td style="width: 58px;"><div class="floatleft"><img alt="Clipboard" src="//upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Clipboard.svg/45px-Clipboard.svg.png" decoding="async" width="45" height="45" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Clipboard.svg/68px-Clipboard.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Clipboard.svg/90px-Clipboard.svg.png 2x" data-file-width="48" data-file-height="48" /></div>
-</td>
-<td>
-<p><b>To do:</b><br />Discuss priority queues and implementations including sorted lists and various heaps.
-</p>
-</td></tr></tbody></table>
-<div style="clear: both"></div>
-<h4><span class="mw-headline" id="Related_Links_2">Related Links</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Data_Structures/Stacks_and_Queues&amp;action=edit&amp;section=30" title="Edit section: Related Links">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
-<ul><li><a href="https://en.wikipedia.org/wiki/queue_(data_structure)" class="extiw" title="wikipedia:queue (data structure)">Queue (Wikipedia)</a></li></ul>
-<h3><span class="mw-headline" id="Deques">Deques</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Data_Structures/Stacks_and_Queues&amp;action=edit&amp;section=31" title="Edit section: Deques">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
-<p>A Deque is a homogeneous list of elements in which insertions and deletion operations are performed on both the ends. <br />
-Because of this property it is known as double ended queue i.e. Deque
-<br />
-Deque has two types:
-</p>
-<ol><li>Input restricted queue: It allows insertion at only one end</li>
-<li>Output restricted queue: It allows deletion at only one end</li></ol>
-<ul><li><a href="https://en.wikipedia.org/wiki/deque" class="extiw" title="wikipedia:deque">Deque (Double-Ended QUEue)</a></li></ul>
-<div style="width:60%; margin:0.5em auto; text-align:center; border:1px solid #003365; background:#E8FFE8; font-size:95%; white-space:nowrap;">
-<p><b><a href="/wiki/Data_Structures" title="Data Structures">Data Structures</a></b><br />
-<a href="/wiki/Data_Structures/Introduction" title="Data Structures/Introduction">Introduction</a> -
-<a href="/wiki/Data_Structures/Asymptotic_Notation" title="Data Structures/Asymptotic Notation">Asymptotic Notation</a> -
-<a href="/wiki/Data_Structures/Arrays" title="Data Structures/Arrays">Arrays</a> -
-<a href="/wiki/Data_Structures/List_Structures" title="Data Structures/List Structures">List Structures &amp; Iterators</a><br />
-<a class="mw-selflink selflink">Stacks &amp; Queues</a> -
-<a href="/wiki/Data_Structures/Trees" title="Data Structures/Trees">Trees</a> -
-<a href="/wiki/Data_Structures/Min_and_Max_Heaps" title="Data Structures/Min and Max Heaps">Min &amp; Max Heaps</a> -
-<a href="/wiki/Data_Structures/Graphs" title="Data Structures/Graphs">Graphs</a><br />
-<a href="/wiki/Data_Structures/Hash_Tables" title="Data Structures/Hash Tables">Hash Tables</a> -
-<a href="/wiki/Data_Structures/Sets" title="Data Structures/Sets">Sets</a> -
-<a href="/wiki/Data_Structures/Tradeoffs" title="Data Structures/Tradeoffs">Tradeoffs</a>
-</p>
-</div>
-<h2><span class="mw-headline" id="References">References</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Data_Structures/Stacks_and_Queues&amp;action=edit&amp;section=32" title="Edit section: References">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
-<div class="reflist references" style="">
-<ol class="references">
-<li id="cite_note-Dromey-1"><span class="mw-cite-backlink">↑ <sup><a href="#cite_ref-Dromey_1-0"><i><b>a</b></i></a></sup> <sup><a href="#cite_ref-Dromey_1-1"><i><b>b</b></i></a></sup></span> <span class="reference-text"><span class="citation book">Dromey,&#32;R.G.&#32;<i>How to Solve it by Computer</i>.&#32;Prentice Hall of India.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=How+to+Solve+it+by+Computer&amp;rft.aulast=Dromey&amp;rft.aufirst=R.G&amp;rft.au=Dromey%2C%26%2332%3BR.G&amp;rft.pub=Prentice+Hall+of+India&amp;rfr_id=info:sid/en.wikibooks.org:Data_Structures/Stacks_and_Queues"><span style="display: none;">&#160;</span></span></span>
-</li>
-<li id="cite_note-ReferenceA-2"><span class="mw-cite-backlink">↑ <sup><a href="#cite_ref-ReferenceA_2-0"><i><b>a</b></i></a></sup> <sup><a href="#cite_ref-ReferenceA_2-1"><i><b>b</b></i></a></sup></span> <span class="reference-text">Data structures, Algorithms and Applications in C++ by Sartaj Sahni</span>
-</li>
-<li id="cite_note-Gopal-3"><span class="mw-cite-backlink">↑ <sup><a href="#cite_ref-Gopal_3-0"><i><b>a</b></i></a></sup> <sup><a href="#cite_ref-Gopal_3-1"><i><b>b</b></i></a></sup> <sup><a href="#cite_ref-Gopal_3-2"><i><b>c</b></i></a></sup></span> <span class="reference-text"><span class="citation book">Gopal,&#32;Arpita.&#32;<i>Magnifying Data Structures</i>.&#32;PHI.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Magnifying+Data+Structures&amp;rft.aulast=Gopal&amp;rft.aufirst=Arpita&amp;rft.au=Gopal%2C%26%2332%3BArpita&amp;rft.pub=PHI&amp;rfr_id=info:sid/en.wikibooks.org:Data_Structures/Stacks_and_Queues"><span style="display: none;">&#160;</span></span></span>
-</li>
-</ol></div>
-<!-- 
-NewPP limit report
-Parsed by mw1335
-Cached time: 20191001074744
-Cache expiry: 2592000
-Dynamic content: false
-Complications: []
-CPU time usage: 0.232 seconds
-Real time usage: 0.410 seconds
-Preprocessor visited node count: 1469/1000000
-Preprocessor generated node count: 0/1500000
-Post‐expand include size: 7374/2097152 bytes
-Template argument size: 1431/2097152 bytes
-Highest expansion depth: 15/40
-Expensive parser function count: 0/500
-Unstrip recursion depth: 0/20
-Unstrip post‐expand size: 40335/5000000 bytes
-Number of Wikibase entities loaded: 0/400
-Lua time usage: 0.017/10.000 seconds
-Lua memory usage: 811 KB/50 MB
--->
-<!--
-Transclusion expansion time report (%,ms,calls,template)
-100.00%  110.359      1 -total
- 47.69%   52.632      2 Template:Data_Structures/ChapNav
- 45.03%   49.693      1 Template:BookCat
- 33.50%   36.973      1 Template:Reflist
- 27.77%   30.643      2 Template:Cite_book
- 23.42%   25.849      2 Template:Citation/core
-  9.57%   10.556      1 Template:Evalx
-  6.26%    6.910      2 Template:TODO
-  3.93%    4.334      1 Template:BOOKCATEGORY
-  3.24%    3.573      2 Template:Citation/make_link
--->
-
-<!-- Saved in parser cache with key enwikibooks:pcache:idhash:20060-0!canonical!math=5 and timestamp 20191001074744 and revision id 3581591
- -->
-</div><noscript><img src="//en.wikibooks.org/wiki/Special:CentralAutoLogin/start?type=1x1" alt="" title="" width="1" height="1" style="border: none; position: absolute;" /></noscript></div>
-		
-		<div class="printfooter">Retrieved from "<a dir="ltr" href="https://en.wikibooks.org/w/index.php?title=Data_Structures/Stacks_and_Queues&amp;oldid=3581591">https://en.wikibooks.org/w/index.php?title=Data_Structures/Stacks_and_Queues&amp;oldid=3581591</a>"</div>
-		
-		<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/wiki/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="/wiki/Category:Book:Data_Structures" title="Category:Book:Data Structures">Book:Data Structures</a></li></ul></div></div>
-		<div class="visualClear"></div>
-		
-	</div>
-</div>
-
-
-		<div id="mw-navigation">
-			<h2>Navigation menu</h2>
-			<div id="mw-head">
-									<div id="p-personal" role="navigation" aria-labelledby="p-personal-label">
-						<h3 id="p-personal-label">Personal tools</h3>
-						<ul>
-							<li id="pt-anonuserpage">Not logged in</li><li id="pt-anontalk"><a href="/wiki/Special:MyTalk" title="Discussion about edits from this IP address [n]" accesskey="n">Discussion for this IP address</a></li><li id="pt-anoncontribs"><a href="/wiki/Special:MyContributions" title="A list of edits made from this IP address [y]" accesskey="y">Contributions</a></li><li id="pt-createaccount"><a href="/w/index.php?title=Special:CreateAccount&amp;returnto=Data+Structures%2FStacks+and+Queues" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="/w/index.php?title=Special:UserLogin&amp;returnto=Data+Structures%2FStacks+and+Queues" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>						</ul>
-					</div>
-									<div id="left-navigation">
-										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
-						<h3 id="p-namespaces-label">Namespaces</h3>
-						<ul>
-							<li id="ca-nstab-main" class="selected"><span><a href="/wiki/Data_Structures/Stacks_and_Queues" title="View the content page [c]" accesskey="c">Book</a></span></li><li id="ca-talk"><span><a href="/wiki/Talk:Data_Structures/Stacks_and_Queues" rel="discussion" title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>						</ul>
-					</div>
-										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
-												<input type="checkbox" class="vectorMenuCheckbox" aria-labelledby="p-variants-label" />
-						<h3 id="p-variants-label">
-							<span>Variants</span>
-						</h3>
-						<ul class="menu">
-													</ul>
-					</div>
-									</div>
-				<div id="right-navigation">
-										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
-						<h3 id="p-views-label">Views</h3>
-						<ul>
-							<li id="ca-view" class="collapsible selected"><span><a href="/wiki/Data_Structures/Stacks_and_Queues">Read</a></span></li><li id="ca-edit" class="collapsible"><span><a href="/w/index.php?title=Data_Structures/Stacks_and_Queues&amp;action=edit" title="Edit this page [e]" accesskey="e">Edit</a></span></li><li id="ca-history" class="collapsible"><span><a href="/w/index.php?title=Data_Structures/Stacks_and_Queues&amp;action=history" title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>						</ul>
-					</div>
-										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
-						<input type="checkbox" class="vectorMenuCheckbox" aria-labelledby="p-cactions-label" />
-						<h3 id="p-cactions-label"><span>More</span></h3>
-						<ul class="menu">
-													</ul>
-					</div>
-										<div id="p-search" role="search">
-						<h3>
-							<label for="searchInput">Search</label>
-						</h3>
-						<form action="/w/index.php" id="searchform">
-							<div id="simpleSearch">
-								<input type="search" name="search" placeholder="Search Wikibooks" title="Search Wikibooks [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Special:Search" name="title"/><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton"/>							</div>
-						</form>
-					</div>
-									</div>
-			</div>
-			<div id="mw-panel">
-				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="/wiki/Main_Page" title="Visit the main page"></a></div>
-						<div class="portal" role="navigation" id="p-Navigation" aria-labelledby="p-Navigation-label">
-			<h3 id="p-Navigation-label">Navigation</h3>
-			<div class="body">
-								<ul>
-					<li id="n-mainpage"><a href="/wiki/Main_Page" title="Visit the main page [z]" accesskey="z">Main Page</a></li><li id="n-help"><a href="/wiki/Help:Contents" title="Find help on how to use and edit Wikibooks">Help</a></li><li id="n-Browse"><a href="/wiki/Wikibooks:Card_Catalog_Office" title="Check out what Wikibooks has to offer">Browse</a></li><li id="n-Cookbook"><a href="/wiki/Cookbook:Table_of_Contents" title="Learn recipes from around the world">Cookbook</a></li><li id="n-Wikijunior"><a href="/wiki/Wikijunior" title="Books for children">Wikijunior</a></li><li id="n-Featured-books"><a href="/wiki/Wikibooks:Featured_books" title="The best of Wikibooks">Featured books</a></li><li id="n-recentchanges"><a href="/wiki/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-sitesupport"><a href="//donate.wikimedia.org/wiki/Special:FundraiserRedirector?utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=C13_en.wikibooks.org&amp;uselang=en" title="Support Wikibooks">Donations</a></li><li id="n-randomrootpage"><a href="/wiki/Special:RandomInCategory/Book:Wikibooks_Stacks/Books">Random book</a></li><li id="n-Using-Wikibooks"><a href="/wiki/Using_Wikibooks">Using Wikibooks</a></li>				</ul>
-							</div>
-		</div>
-			<div class="portal" role="navigation" id="p-Community" aria-labelledby="p-Community-label">
-			<h3 id="p-Community-label">Community</h3>
-			<div class="body">
-								<ul>
-					<li id="n-Reading-room"><a href="/wiki/Wikibooks:Reading_room" title="Discuss Wikibooks-related questions and concerns with others">Reading room</a></li><li id="n-portal"><a href="/wiki/Wikibooks:Community_Portal" title="Find your way around the Wikibooks community">Community portal</a></li><li id="n-currentevents"><a href="/wiki/Wikibooks:Reading_room/Bulletin_Board" title="Important community news">Bulletin Board</a></li><li id="n-maintenance"><a href="/wiki/Wikibooks:Maintenance" title="Frequent tasks that you can help with">Help out!</a></li><li id="n-Policies-and-guidelines"><a href="/wiki/Wikibooks:Policies_and_guidelines" title="Pages detailing important rules and procedures">Policies and guidelines</a></li><li id="n-contact"><a href="/wiki/Wikibooks:Contact_us" title="Alternative methods of communication">Contact us</a></li>				</ul>
-							</div>
-		</div>
-			<div class="portal" role="navigation" id="p-tb" aria-labelledby="p-tb-label">
-			<h3 id="p-tb-label">Tools</h3>
-			<div class="body">
-								<ul>
-					<li id="t-whatlinkshere"><a href="/wiki/Special:WhatLinksHere/Data_Structures/Stacks_and_Queues" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="/wiki/Special:RecentChangesLinked/Data_Structures/Stacks_and_Queues" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="//commons.wikimedia.org/wiki/Special:UploadWizard?uselang=en" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="/wiki/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-permalink"><a href="/w/index.php?title=Data_Structures/Stacks_and_Queues&amp;oldid=3581591" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="/w/index.php?title=Data_Structures/Stacks_and_Queues&amp;action=info" title="More information about this page">Page information</a></li><li id="t-cite"><a href="/w/index.php?title=Special:CiteThisPage&amp;page=Data_Structures%2FStacks_and_Queues&amp;id=3581591" title="Information on how to cite this page">Cite this page</a></li>				</ul>
-							</div>
-		</div>
-			<div class="portal" role="navigation" id="p-lang" aria-labelledby="p-lang-label">
-			<h3 id="p-lang-label">In other languages</h3>
-			<div class="body">
-								<ul>
-									</ul>
-				<div class="after-portlet after-portlet-lang"><span class="wb-langlinks-add wb-langlinks-link"><a href="https://www.wikidata.org/wiki/Special:NewItem?site=enwikibooks&amp;page=Data+Structures%2FStacks+and+Queues" title="Add interlanguage links" class="wbc-editpage">Add links</a></span></div>			</div>
-		</div>
-			<div class="portal" role="navigation" id="p-Sister_projects" aria-labelledby="p-Sister_projects-label">
-			<h3 id="p-Sister_projects-label">Sister projects</h3>
-			<div class="body">
-								<ul>
-					<li id="n-Wikipedia"><a href="https://en.wikipedia.org/wiki/Main_Page">Wikipedia</a></li><li id="n-Wikiversity"><a href="https://en.wikiversity.org/wiki/Wikiversity:Main_Page">Wikiversity</a></li><li id="n-Wiktionary"><a href="https://en.wiktionary.org/wiki/Wiktionary:Main_Page">Wiktionary</a></li><li id="n-Wikiquote"><a href="https://en.wikiquote.org/wiki/Main_Page">Wikiquote</a></li><li id="n-Wikisource"><a href="https://en.wikisource.org/wiki/Main_Page">Wikisource</a></li><li id="n-Wikinews"><a href="https://en.wikinews.org/wiki/Main_Page">Wikinews</a></li><li id="n-Wikivoyage"><a href="https://en.wikivoyage.org/wiki/Main_Page">Wikivoyage</a></li><li id="n-Commons"><a href="https://commons.wikimedia.org/wiki/Main_Page">Commons</a></li><li id="n-Wikidata"><a href="https://www.wikidata.org/wiki/Wikidata:Main_Page">Wikidata</a></li>				</ul>
-							</div>
-		</div>
-			<div class="portal" role="navigation" id="p-coll-print_export" aria-labelledby="p-coll-print_export-label">
-			<h3 id="p-coll-print_export-label">Print/export</h3>
-			<div class="body">
-								<ul>
-					<li id="coll-create_a_book"><a href="/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Data+Structures%2FStacks+and+Queues">Create a collection</a></li><li id="coll-download-as-rl"><a href="/w/index.php?title=Special:ElectronPdf&amp;page=Data+Structures%2FStacks+and+Queues&amp;action=show-download-screen">Download as PDF</a></li><li id="t-print"><a href="/w/index.php?title=Data_Structures/Stacks_and_Queues&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				</ul>
-							</div>
-		</div>
-				</div>
-		</div>
-				<div id="footer" role="contentinfo">
-						<ul id="footer-info">
-								<li id="footer-info-lastmod"> This page was last edited on 1 October 2019, at 07:47.</li>
-								<li id="footer-info-copyright">Text is available under the <a href="//creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike License.</a>; additional terms may apply.  By using this site, you agree to the <a href="//wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> and <a href="//wikimediafoundation.org/wiki/Privacy_policy">Privacy Policy.</a></li>
-							</ul>
-						<ul id="footer-places">
-								<li id="footer-places-privacy"><a href="https://foundation.wikimedia.org/wiki/Privacy_policy" class="extiw" title="wmf:Privacy policy">Privacy policy</a></li>
-								<li id="footer-places-about"><a href="/wiki/Wikibooks:Welcome" title="Wikibooks:Welcome">About Wikibooks</a></li>
-								<li id="footer-places-disclaimer"><a href="/wiki/Wikibooks:General_disclaimer" title="Wikibooks:General disclaimer">Disclaimers</a></li>
-								<li id="footer-places-developers"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/How_to_contribute">Developers</a></li>
-								<li id="footer-places-cookiestatement"><a href="https://foundation.wikimedia.org/wiki/Cookie_statement">Cookie statement</a></li>
-								<li id="footer-places-mobileview"><a href="//en.m.wikibooks.org/w/index.php?title=Data_Structures/Stacks_and_Queues&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">Mobile view</a></li>
-							</ul>
-										<ul id="footer-icons" class="noprint">
-										<li id="footer-copyrightico">
-						<a href="https://wikimediafoundation.org/"><img src="/static/images/wikimedia-button.png" srcset="/static/images/wikimedia-button-1.5x.png 1.5x, /static/images/wikimedia-button-2x.png 2x" width="88" height="31" alt="Wikimedia Foundation"/></a>					</li>
-										<li id="footer-poweredbyico">
-						<a href="https://www.mediawiki.org/"><img src="/static/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/static/images/poweredby_mediawiki_132x47.png 1.5x, /static/images/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>					</li>
-									</ul>
-						<div style="clear: both;"></div>
-		</div>
-		
-
-<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.232","walltime":"0.410","ppvisitednodes":{"value":1469,"limit":1000000},"ppgeneratednodes":{"value":0,"limit":1500000},"postexpandincludesize":{"value":7374,"limit":2097152},"templateargumentsize":{"value":1431,"limit":2097152},"expansiondepth":{"value":15,"limit":40},"expensivefunctioncount":{"value":0,"limit":500},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":40335,"limit":5000000},"entityaccesscount":{"value":0,"limit":400},"timingprofile":["100.00%  110.359      1 -total"," 47.69%   52.632      2 Template:Data_Structures/ChapNav"," 45.03%   49.693      1 Template:BookCat"," 33.50%   36.973      1 Template:Reflist"," 27.77%   30.643      2 Template:Cite_book"," 23.42%   25.849      2 Template:Citation/core","  9.57%   10.556      1 Template:Evalx","  6.26%    6.910      2 Template:TODO","  3.93%    4.334      1 Template:BOOKCATEGORY","  3.24%    3.573      2 Template:Citation/make_link"]},"scribunto":{"limitreport-timeusage":{"value":"0.017","limit":"10.000"},"limitreport-memusage":{"value":830132,"limit":52428800}},"cachereport":{"origin":"mw1335","timestamp":"20191001074744","ttl":2592000,"transientcontent":false}}});mw.config.set({"wgBackendResponseTime":113,"wgHostname":"mw1252"});});</script>
-</body>
+</pre></body>
 </html>
