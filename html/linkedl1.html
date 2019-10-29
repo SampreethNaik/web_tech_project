@@ -1,0 +1,397 @@
+<head><title>LinkedLists
+</title></head>
+<body text="#000000" bgcolor="#FFFFFF">
+
+<link rel="stylesheet" href="pix/course.css" type="text/css">
+
+
+
+<center><h1><font color="green">Linked Lists</font></h1></center>
+
+
+<h2>Introduction</h2>
+One disadvantage of using arrays to store data is that arrays are static structures and therefore
+cannot be easily extended or reduced to fit the data set.  Arrays are also expensive to maintain new
+insertions and deletions. In this chapter we consider another data structure called Linked Lists that
+addresses some of the limitations of arrays .
+
+<p>A linked list is a linear data structure where each element is a separate
+object.
+
+</p><center><img src="pix/linkedlist.bmp"></center>
+
+<br>Each element (we will call it a <b>node</b>) of a list is comprising of two items - the
+data and a reference to the next node. The last node has a reference to <font color="blue">null</font>.
+The entry point into a linked list is called the <b>head</b> of the list. It should be noted that head
+is not a separate node, but the reference to the first node. If the list is empty then the head is a
+null reference.
+
+<p>A linked list is a dynamic data structure. The number of nodes in a list is not fixed and can grow
+and shrink on demand. Any application which has to deal with an unknown number of objects will need to
+use a linked list.
+
+</p><p>One disadvantage of a linked list against an array is that it does not allow
+direct access to the individual elements. If you want to access a particular item then
+you have to start at the head and follow the references until you get to that item.
+</p><p>Another disadvantage is that a linked list uses more memory compare with an array - we extra
+4 bytes (on 32-bit CPU) to store a reference to the next node.
+
+
+</p><h3>Types of Linked Lists</h3>
+<p>A <b>singly linked list</b> is described above
+</p><p>A <b>doubly linked list</b> is a list that has two references, one to the next node
+and another to previous node.
+
+</p><center><img src="pix/doubly.bmp"></center>
+
+<br>Another important type of a linked list is called a <b>circular linked list</b>
+where last node of the list points back to the first node (or the head) of the list.
+
+
+<h3>The Node class</h3>
+In Java you are allowed to define a class (say, B) inside of another class (say, A). The class A is
+called the outer class, and the class B is called the <b>inner</b> class. The purpose of inner classes
+is purely to be used internally as helper classes. Here is the LinkedList class with the inner Node
+class
+<dir><pre>private static class Node&lt;AnyType&gt;
+{
+   private AnyType data;
+   private Node&lt;AnyType&gt; next;
+
+   public Node(AnyType data, Node&lt;AnyType&gt; next)
+   {
+      this.data = data;
+      this.next = next;
+   }
+}
+</pre></dir>
+An inner class is a member of its enclosing class and has access to other members (inclusing private)
+of the outer class, And vise versa, the outer class can have a direct access to all members of the
+inner class. An inner class can be declared private, public, protected, or package private.
+There are two kind of inner classes: static and non-static. A static inner class cannot refer
+directly to instance variables or methods defined in its outer class: it can use them only through an
+object reference.
+
+<p>We implement the LinkedList class with two inner classes: static Node class and non-static
+LinkedListIterator class. See <a href="code/LinkedList.java" target="_blank">LinkedList.java</a> for a complete
+implementation.
+
+</p><p><b>Examples </b>
+<br>Let us assume the singly linked list above and trace down the effect of each fragment below. The
+list is restored to its initial state before
+each line executes
+
+
+</p><ol>
+<li><pre>head = head.next;
+</pre>
+<center><img src="pix/linkedlist2.bmp"></center>
+
+
+<p>&nbsp;
+</p><p>&nbsp;
+
+</p></li><li><pre>head.next = head.next.next;
+</pre>
+<center><img src="pix/linkedlist3.bmp"></center>
+
+</li><li><pre>head.next.next.next.next = head;
+</pre>
+
+<center><img src="pix/linkedlist4.bmp"></center>
+</li></ol>
+
+<h2>Linked List Operations</h2>
+<b>addFirst</b>
+<p>The method creates a node and prepends it at the beginning of the list.
+
+</p><center><img src="pix/prepend.bmp"></center>
+
+<dir><pre>public void addFirst(AnyType item)
+{
+   head = new Node&lt;AnyType&gt;(item, head);
+}
+</pre></dir>
+
+<p><b>Traversing</b>
+</p><p>Start with the head and access each node until you reach null. Do not change the
+head reference.
+</p><center><img src="pix/traverse.bmp"></center>
+
+<dir><pre>Node tmp = head;
+
+while(tmp != null) tmp = tmp.next;
+</pre></dir>
+
+<p><b>addLast</b>
+</p><p>The method appends the node to the end of the list. This requires traversing, but make sure you
+stop at the last node
+
+</p><center><img src="pix/append.bmp"></center>
+
+
+<dir><pre>public void addLast(AnyType item)
+{
+   if(head == null) addFirst(item);
+   else
+   {
+      Node&lt;AnyType&gt; tmp = head;
+      while(tmp.next != null) tmp = tmp.next;
+
+      tmp.next = new Node&lt;AnyType&gt;(item, null);
+   }
+}
+</pre></dir>
+
+
+<p><b>Inserting "after"</b>
+</p><p>Find a node containing "key" and insert a new node after it. In the picture below, we insert a new
+node after "e":
+</p><center><img src="pix/after.bmp"></center>
+
+<dir><pre>public void insertAfter(AnyType key, AnyType toInsert)
+{
+   Node&lt;AnyType&gt; tmp = head;
+   while(tmp != null &amp;&amp; !tmp.data.equals(key)) tmp = tmp.next;
+
+   if(tmp != null)
+      tmp.next = new Node&lt;AnyType&gt;(toInsert, tmp.next);
+}
+</pre></dir>
+
+
+
+<p><b>Inserting "before"</b>
+</p><p>Find a node containing "key" and insert a new node before that node. In the picture below, we
+insert a new node before "a":
+</p><center><img src="pix/before.bmp"></center>
+
+<br>For the sake of convenience, we maintain two references <code>prev</code> and <code>cur</code>.
+When we move along the list we shift these two references, keeping <code>prev</code> one step before
+<code>cur</code>. We continue until <code>cur</code> reaches the node before which we need to make an
+insertion. If <code>cur</code> reaches null, we don't insert, otherwise we insert a new node between
+<code>prev</code> and <code>cur</code>.
+
+<p>Examine this implementation
+
+</p><dir><pre>public void insertBefore(AnyType key, AnyType toInsert)
+{
+   if(head == null) return null;
+   if(head.data.equals(key))
+   {
+      addFirst(toInsert);
+      return;
+   }
+
+   Node&lt;AnyType&gt; prev = null;
+   Node&lt;AnyType&gt; cur = head;
+
+   while(cur != null &amp;&amp; !cur.data.equals(key))
+   {
+      prev = cur;
+      cur = cur.next;
+   }
+   //insert between cur and prev
+   if(cur != null) prev.next = new Node&lt;AnyType&gt;(toInsert, cur);
+}
+</pre></dir>
+
+<p><b>Deletion</b>
+</p><p>Find a node containing "key" and delete it. In the picture below we delete a node
+containing "A"
+</p><center><img src="pix/delete.bmp"></center>
+
+The algorithm is similar to insert "before" algorithm. It is convinient to use two references <code>
+prev</code> and <code>cur</code>. When we move along the list we shift these two references, keeping
+<code>prev</code> one step before <code>cur</code>. We continue until <code>cur</code> reaches the
+node which we need to delete. There are three exceptional cases, we need to take care of:
+<ol>
+<li> list is empty
+</li><li> delete the head node
+</li><li> node is not in the list
+</li></ol>
+
+<dir><pre>public void remove(AnyType key)
+{
+   if(head == null) throw new RuntimeException("cannot delete");
+
+   if( head.data.equals(key) )
+   {
+      head = head.next;
+      return;
+   }
+
+   Node&lt;AnyType&gt; cur  = head;
+   Node&lt;AnyType&gt; prev = null;
+
+   while(cur != null &amp;&amp; !cur.data.equals(key) )
+   {
+      prev = cur;
+      cur = cur.next;
+   }
+
+   if(cur == null) throw new RuntimeException("cannot delete");
+
+   //delete cur node
+   prev.next = cur.next;
+}
+</pre></dir>
+
+<h2>Iterator</h2>
+
+
+<p>The whole idea of the iterator is to provide an access to a private aggregated data and at
+the same moment
+hiding the underlying representation. An iterator is Java is an object, and therefore it's
+implementation requires creating a class that implements the <i>Iterator</i> interface. Usually such
+class is implemented as a private inner class. The <i>Iterator</i> interface contains the following
+methods:
+</p><ul>
+<li>AnyType next() - returns the next element in the container
+</li><li>boolean hasNext() - checks if there is a next element
+</li><li>void remove() - (optional operation).removes the element returned by next()
+</li></ul>
+
+In this section we implement the Iterator in the LinkedList class. First of all we add a new method to
+the LinkedList class:
+<dir><pre>public Iterator&lt;AnyType&gt; iterator()
+{
+   return new LinkedListIterator();
+}
+</pre></dir>
+<p>Here <code>LinkedListIterator</code> is a private class inside the LinkedList class
+</p><dir><pre>private class LinkedListIterator implements Iterator&lt;AnyType&gt;
+{
+   private Node&lt;AnyType&gt; nextNode;
+
+   public LinkedListIterator()
+   {
+      nextNode = head;
+   }
+   ...
+}
+</pre></dir>
+The <code>LinkedListIterator</code> class must provide implementations for <code>next()</code> and
+<code>hasNext()</code> methods. Here is the <code>next()</code> method:
+<dir><pre>public AnyType next()
+{
+   if(!hasNext()) throw new NoSuchElementException();
+   AnyType res = nextNode.data;
+   nextNode = nextNode.next;
+   return res;
+}
+</pre></dir>
+
+
+<h2>Cloning</h2>
+
+<p>Like for any other objects, we need to learn how to clone linked lists. If we simply use the
+clone() method from the
+Object class, we will get the following structure called a "shallow" copy:
+</p><center><img src="pix/shallowclone.bmp"></center>
+
+<p>The Object's clone() will create a copy of the first node, and share the rest. This is not
+exactly what we mean by "a copy of the object". What we actually want is a copy represented by the picture
+below
+
+</p><center><img src="pix/deepclone.bmp"></center>
+
+<p>Since out data is immutable it's ok to have data shared between two linked lists. There are a few
+ideas to implement linked list copying. The simplest one is to traverse the original list and copy
+each node by using the addFirst() method. When this is finished, you will have  a new list in the
+reverse order. Finally, we will have to reverse the list:
+
+</p><dir><pre>public Object copy()
+{
+   LinkedList&lt;AnyType&gt; twin = new LinkedList&lt;AnyType&gt;();
+   Node&lt;AnyType&gt; tmp = head;
+   while(tmp != null)
+   {
+      twin.addFirst( tmp.data );
+      tmp = tmp.next;
+   }
+
+   return twin.reverse();
+}
+</pre></dir>
+
+<p>A better way involves using a tail reference for the new list, adding each new node after the last
+node.
+</p><dir><pre>public LinkedList&lt;AnyType&gt; copy3()
+{
+   if(head==null) return null;
+   LinkedList&lt;AnyType&gt; twin = new LinkedList&lt;AnyType&gt;();
+   Node<anytype> tmp = head;
+   twin.head = new Node&lt;AnyType&gt;(head.data, null);
+   Node<anytype> tmpTwin = twin.head;
+
+   while(tmp.next != null)
+   {
+      tmp = tmp.next;
+      tmpTwin.next = new Node&lt;AnyType&gt;(tmp.data, null);
+      tmpTwin = tmpTwin.next;
+   }
+
+   return twin;
+}
+</anytype></anytype></pre></dir>
+
+<center><h2><b><font face="Helvetica" color="#006666">Applications</font></b></h2>
+</center>
+
+<h2>Polynomial Algebra</h2>
+<p>The biggest integer that we can store in a variable of the type <font color="blue">int</font>
+is <code>2<sup>31</sup> - 1</code> on 32-but CPU. You can easily verify this by the following
+operations:
+</p><dir><pre>int prod=1;
+for(int i = 1; i &lt;=; 31; i ++)
+         prod *= 2;
+System.out.println(prod);
+</pre></dir>
+<p>This code doesn't produce an error, it produces a result! The printed value is a <i>negative</i>
+integer <code>-2147483648 = -2<sup>31</sup></code>. If the value becomes too large, Java saves only
+the low order 32 (or 64 for longs) bits and throws the rest away.
+
+
+</p><p>In real life applications we need to deal with integers that are larger than 64 bits
+(the size of a long). To manipulate with such big numbers, we will be using a linked list data
+structure. First we observe that each integer can be expressed in the decimal system of notation.
+
+</p><dir>
+937 = 9*10<sup>2</sup> + 3*10<sup>1</sup> + 7*10<sup>0</sup>
+</dir><dir>
+2011 = 2*10<sup>3</sup> + 0*10<sup>2</sup> + 1*10<sup>1</sup> + 1*10<sup>0</sup>
+</dir>
+
+<p>Now, if we replace a decimal base 10 by a character, say 'x', we obtain a univariate polynomial,
+such as
+
+
+</p><center>
+<div>
+0.45 - 1.89 x<sup>2</sup> + 3.4 x<sup>5</sup> + 9 x<sup>16</sup>
+</div>
+</center>
+
+
+
+<p>We will write an application that manipulates polynomials in one variable with real
+coefficients.Among many operations on polynomials, we implement addition, multiplication,
+differentiation and evaluation. A polynomial willbe represented as a linked list, where each node has an
+integer degree, a double coefficient and a reference to the next term. The final node
+will have a null reference to indicate the end of the list. Here is a linked link
+representation for the above polynomial:
+
+</p><p></p><center><img src="pix/polynomial.bmp"></center>
+
+<p>The terms are kept in order from smallest to largest exponent. See <a href="code/Polynomial.java" target="_blank">Polynomial.java</a> for details.
+
+</p><hr>
+<p>Victor S.Adamchik, CMU, 2009
+
+
+
+
+
+
+</p></body>
