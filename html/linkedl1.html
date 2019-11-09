@@ -18,7 +18,7 @@ addresses some of the limitations of arrays .
 <p>A linked list is a linear data structure where each element is a separate
 object.
 
-</p><center><img src="pix/linkedlist.bmp"></center>
+</p><center><img src="https://www.cs.cmu.edu/~adamchik/15-121/lectures/Linked%20Lists/pix/linkedlist.bmp"></center>
 
 <br>Each element (we will call it a <b>node</b>) of a list is comprising of two items - the
 data and a reference to the next node. The last node has a reference to <font color="blue">null</font>.
@@ -42,7 +42,7 @@ you have to start at the head and follow the references until you get to that it
 </p><p>A <b>doubly linked list</b> is a list that has two references, one to the next node
 and another to previous node.
 
-</p><center><img src="pix/doubly.bmp"></center>
+</p><center><img src="https://www.cs.cmu.edu/~adamchik/15-121/lectures/Linked%20Lists/pix/doubly.bmp"></center>
 
 <br>Another important type of a linked list is called a <b>circular linked list</b>
 where last node of the list points back to the first node (or the head) of the list.
@@ -73,8 +73,7 @@ directly to instance variables or methods defined in its outer class: it can use
 object reference.
 
 <p>We implement the LinkedList class with two inner classes: static Node class and non-static
-LinkedListIterator class. See <a href="code/LinkedList.java" target="_blank">LinkedList.java</a> for a complete
-implementation.
+LinkedListIterator class.
 
 </p><p><b>Examples </b>
 <br>Let us assume the singly linked list above and trace down the effect of each fragment below. The
@@ -85,7 +84,7 @@ each line executes
 </p><ol>
 <li><pre>head = head.next;
 </pre>
-<center><img src="pix/linkedlist2.bmp"></center>
+<center><img src="https://www.cs.cmu.edu/~adamchik/15-121/lectures/Linked%20Lists/pix/linkedlist2.bmp"></center>
 
 
 <p>&nbsp;
@@ -93,19 +92,19 @@ each line executes
 
 </p></li><li><pre>head.next = head.next.next;
 </pre>
-<center><img src="pix/linkedlist3.bmp"></center>
+<center><img src="https://www.cs.cmu.edu/~adamchik/15-121/lectures/Linked%20Lists/pix/linkedlist3.bmp"></center>
 
 </li><li><pre>head.next.next.next.next = head;
 </pre>
 
-<center><img src="pix/linkedlist4.bmp"></center>
+<center><img src="https://www.cs.cmu.edu/~adamchik/15-121/lectures/Linked%20Lists/pix/linkedlist4.bmp"></center>
 </li></ol>
 
 <h2>Linked List Operations</h2>
 <b>addFirst</b>
 <p>The method creates a node and prepends it at the beginning of the list.
 
-</p><center><img src="pix/prepend.bmp"></center>
+</p><center><img src="https://www.cs.cmu.edu/~adamchik/15-121/lectures/Linked%20Lists/pix/prepend.bmp"></center>
 
 <dir><pre>public void addFirst(AnyType item)
 {
@@ -116,7 +115,7 @@ each line executes
 <p><b>Traversing</b>
 </p><p>Start with the head and access each node until you reach null. Do not change the
 head reference.
-</p><center><img src="pix/traverse.bmp"></center>
+</p><center><img src="https://www.cs.cmu.edu/~adamchik/15-121/lectures/Linked%20Lists/pix/traverse.bmp"></center>
 
 <dir><pre>Node tmp = head;
 
@@ -127,7 +126,7 @@ while(tmp != null) tmp = tmp.next;
 </p><p>The method appends the node to the end of the list. This requires traversing, but make sure you
 stop at the last node
 
-</p><center><img src="pix/append.bmp"></center>
+</p><center><img src="https://www.cs.cmu.edu/~adamchik/15-121/lectures/Linked%20Lists/pix/append.bmp"></center>
 
 
 <dir><pre>public void addLast(AnyType item)
@@ -147,7 +146,7 @@ stop at the last node
 <p><b>Inserting "after"</b>
 </p><p>Find a node containing "key" and insert a new node after it. In the picture below, we insert a new
 node after "e":
-</p><center><img src="pix/after.bmp"></center>
+</p><center><img src="https://www.cs.cmu.edu/~adamchik/15-121/lectures/Linked%20Lists/pix/after.bmp"></center>
 
 <dir><pre>public void insertAfter(AnyType key, AnyType toInsert)
 {
@@ -164,7 +163,7 @@ node after "e":
 <p><b>Inserting "before"</b>
 </p><p>Find a node containing "key" and insert a new node before that node. In the picture below, we
 insert a new node before "a":
-</p><center><img src="pix/before.bmp"></center>
+</p><center><img src="https://www.cs.cmu.edu/~adamchik/15-121/lectures/Linked%20Lists/pix/before.bmp"></center>
 
 <br>For the sake of convenience, we maintain two references <code>prev</code> and <code>cur</code>.
 When we move along the list we shift these two references, keeping <code>prev</code> one step before
@@ -199,7 +198,7 @@ insertion. If <code>cur</code> reaches null, we don't insert, otherwise we inser
 <p><b>Deletion</b>
 </p><p>Find a node containing "key" and delete it. In the picture below we delete a node
 containing "A"
-</p><center><img src="pix/delete.bmp"></center>
+</p><center><img src="https://www.cs.cmu.edu/~adamchik/15-121/lectures/Linked%20Lists/pix/delete.bmp"></center>
 
 The algorithm is similar to insert "before" algorithm. It is convinient to use two references <code>
 prev</code> and <code>cur</code>. When we move along the list we shift these two references, keeping
@@ -288,13 +287,13 @@ The <code>LinkedListIterator</code> class must provide implementations for <code
 <p>Like for any other objects, we need to learn how to clone linked lists. If we simply use the
 clone() method from the
 Object class, we will get the following structure called a "shallow" copy:
-</p><center><img src="pix/shallowclone.bmp"></center>
+</p><center><img src="https://www.cs.cmu.edu/~adamchik/15-121/lectures/Linked%20Lists/pix/shallowclone.bmp"></center>
 
 <p>The Object's clone() will create a copy of the first node, and share the rest. This is not
 exactly what we mean by "a copy of the object". What we actually want is a copy represented by the picture
 below
 
-</p><center><img src="pix/deepclone.bmp"></center>
+</p><center><img src="https://www.cs.cmu.edu/~adamchik/15-121/lectures/Linked%20Lists/pix/deepclone.bmp"></center>
 
 <p>Since out data is immutable it's ok to have data shared between two linked lists. There are a few
 ideas to implement linked list copying. The simplest one is to traverse the original list and copy
@@ -382,16 +381,7 @@ integer degree, a double coefficient and a reference to the next term. The final
 will have a null reference to indicate the end of the list. Here is a linked link
 representation for the above polynomial:
 
-</p><p></p><center><img src="pix/polynomial.bmp"></center>
-
-<p>The terms are kept in order from smallest to largest exponent. See <a href="code/Polynomial.java" target="_blank">Polynomial.java</a> for details.
-
-</p><hr>
-<p>Victor S.Adamchik, CMU, 2009
+</p><p></p><center><img src="https://www.cs.cmu.edu/~adamchik/15-121/lectures/Linked%20Lists/pix/polynomial.bmp"></center>
 
 
-
-
-
-
-</p></body>
+</p>
