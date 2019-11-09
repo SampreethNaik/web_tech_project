@@ -18,6 +18,8 @@ body{
 	line-height: 1.6em;
 	margin: 0 auto;
 	width: 900px;
+	border: dashed 2px;
+	padding: 50px;
 }
  .mw-headline {
  	text-transform: uppercase;
@@ -46,7 +48,7 @@ body{
 	color:white;
 }
 
-img {
+.imgs {
 	display: block;
 	margin-left: 50%;
 	margin-right: auto;
