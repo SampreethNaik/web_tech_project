@@ -1,0 +1,219 @@
+/*h1{
+	color:green;
+}*/
+/* *{
+	margin: 0;
+	padding:0;
+} To reset all the padding on the page on everything */ 
+body{
+	background-color: black;
+	color: #00FF00;
+
+	font-family: serif;
+	font-size:24px;
+	font-weight: normal;
+	/* Same as above
+	font: normal 16px Arial,Helvetica,sans-serif;
+	*/
+	line-height: 1.6em;
+	margin: 0 auto;
+	width: 900px;
+}
+ .mw-headline {
+ 	text-transform: uppercase;
+ }
+
+.container{
+	width:80%;
+	margin:auto;
+}
+
+.button{
+	background-color: green;
+	color: white;
+	padding:10px 15px;
+	border: dotted;
+	border-radius: 5px;
+
+}
+
+.clr{
+	clear:both;
+}
+
+.button:hover{
+	background:red;
+	color:white;
+}
+
+img {
+	display: block;
+	margin-left: 50%;
+	margin-right: auto;
+	width: 70%; 
+}
+
+.box-1{
+	background-color: #333;
+
+	border-right:5px green solid;
+	border-left:5px green solid;
+	border-top:5px green solid;
+	border-bottom:5px green solid;
+	/*same as above*
+	border: 5px green solid;
+	border-width:3px
+	border-bottom-width:10px
+	border-top-style:dotted*/
+	padding-top: 20px;
+	padding-bottom:20px;
+	padding-right:20px;
+	padding-left:20px;
+
+	/*Same as above
+	padding:20 px;
+	*/
+
+	margin-top: 20px;
+	margin-bottom:20px;
+	margin-right: 20px;
+	margin-left:20px;
+
+
+}
+a{
+	text-decoration: none;
+	color:green;
+}
+
+a:hover{
+	color:red;
+}
+
+a:active{
+	color:coral;
+}
+
+/*a:visited{
+	color:yellow;
+}*/
+
+.box-1 h1{
+	font-family: serif;
+	font-weight: 800;
+	font-style: italic;
+	text-decoration:underline;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	word-spacing: 0.5em
+}
+
+.box-2{
+	border:3px dotted #ccc;
+	padding:20px;
+	margin:20px 0;
+}
+
+.categories{
+	border:1px #ccc solid;
+	padding:10px;
+	border-radius: 20px;
+}
+
+.categories h2{
+	text-align:center;
+}
+
+.categories ul{
+	padding:0;
+	padding-left:20px;
+	color:green;
+	list-style:square;
+}
+
+.categories li{
+	padding-bottom: 6px;
+	border-bottom: dotted 1px #333;
+	list-style-image: url('../images/check.png');
+}
+
+.my-form{
+	padding:20px;
+}
+
+.my-form .form-group{
+	padding-bottom: 15px;
+}
+
+.my-form label{
+	display:block;
+}
+
+.my-form input[type="text"], .my-form textarea{
+	padding:8px;
+	width:75%;
+}
+ 
+.block{
+	float:left;
+	width:33.3%;
+	border:1px solid #ccc;
+	padding:10px;
+	box-sizing: border-box;
+
+}
+
+#main-block{
+	float:left;
+	width: 70%;
+}
+
+#side-bar{
+	float:right;
+	width:30%;
+	background-color: #222;
+	color:green;
+	padding:15px;
+	box-sizing: border-box;
+}
+
+.p-box{
+	width:800px;
+	height:500px;
+	border:1px solid green;
+	margin-top: 30px;
+	position:relative;
+	background-image: url(../images/anonymous.jpg);
+	background-repeat: no-repeat;
+	background-position: 100px 200px;
+	background-position: center top;
+}
+
+.p-box h1{
+	position: absolute;
+	top:100px;
+	left:200px;
+}/*this is an example for absolute positioning*/
+
+.p-box h2{
+	position: absolute;
+	bottom:40px;
+	right:100px;
+}/*This one as well*/
+
+.fix-me{
+	position: fixed;
+	top:400px;
+}
+
+.my-list li:first-child{
+	background: red;
+}
+
+.my-list li:last-child{
+	background: pink 
+}
+
+.my-list li:nth-child(5){
+	background:yellow;
+}
