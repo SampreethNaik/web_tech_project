@@ -179,3 +179,7 @@ body, html {
   right:200px;
   bottom:200px;
 }
+
+.split-pane-component{
+  display: none;
+}
