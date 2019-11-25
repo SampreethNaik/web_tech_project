@@ -157,7 +157,7 @@ body, html {
 
 .logo{
   position: absolute;
-  top:30px;
+  top:40px;
   left:25px;
 }
 
@@ -169,4 +169,12 @@ body, html {
 
 .logoCodeSmith{
   padding-top: 10px
+}
+
+.iframec{
+  display:none;
+  position:absolute;
+  top:25%;
+  left:25%;
+  right:25%;
 }
