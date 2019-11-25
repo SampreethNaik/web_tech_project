@@ -174,9 +174,8 @@ body, html {
 .iframec{
   display:none;
   position:fixed;
+  top:100px;
   left:200px;
   right:200px;
-  top:200px;
   bottom:200px;
-  padding bottom:90px;
 }
