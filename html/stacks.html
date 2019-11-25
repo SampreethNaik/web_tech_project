@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html><head><title>Stacks Introduction
+</title>
+<link rel="stylesheet" type="text/css" href="../css/stacks_queues.css">
+</head>
+<body>
+
+
+<center><h1><font color="green">Introduction To Stacks</font></h1></center>
+
+<button class="back" onclick="window.location.href='introduction.html'">Back</button>
+<p>An array is a <i>random access</i> data structure, where each element can be
+accessed directly and in constant time. A typical illustration of random access
+is a book - each page of the book can be open independently of others. Random access
+is critical to  many algorithms, for example binary search.
+
+<p>A linked list is a <i>sequential access</i> data structure, where each element
+can be accesed only in particular order. A typical illustration of sequential access
+is a roll of paper or tape - all prior material must be unrolled in order to get to
+data you want.
+
+<p>In this note we consider a subcase of sequential data structures, so-called
+<i>limited access</i> data sturctures.
+
+
+<h2>Stacks</h2>
+<TABLE  bordercolor="" cellpadding="2">
+<tr ALIGN=left>
+<td>A stack is a container of objects that are inserted and removed according to the last-in
+first-out (LIFO) principle. In the pushdown stacks only two operations are allowed: <b>push</b>
+the item into the stack, and <b>pop</b> the item out of the stack. A stack is a limited access
+data structure - elements can be added and
+removed from the stack only at the top. <b>push</b> adds an item to the top of the stack,
+<b>pop</b> removes the item from the top. A helpful analogy is to think of a stack of books; you can remove only
+the top book, also you can add a new book on the top.
+
+<p>A stack is a <b>recursive</b> data
+structure. Here is a structural definition of a Stack:
+<ul>
+   a stack is either empty or<br>
+   it consistes of a top and the rest which is a stack;
+</ul>
+</td>
+<td>&nbsp; <img src="https://www.cs.cmu.edu/~adamchik/15-121/lectures/Stacks%20and%20Queues/pix/stack.bmp"> &nbsp;</td>
+</tr>
+</TABLE>
+
+<h3>Applications</h3>
+<ul>
+<li>The simplest application of a stack is to reverse a word. You push a given word to stack -
+letter by letter - and then pop letters from the stack.
+
+<li>Another application is an "undo" mechanism in text editors; this operation is accomplished
+by keeping all text changes in a stack.
+
+
+<TABLE  bordercolor="" cellpadding="2">
+<tr ALIGN=left>
+<td>&nbsp; <img src="https://www.cs.cmu.edu/~adamchik/15-121/lectures/Stacks%20and%20Queues/pix/maze.bmp" HEIGHT=180 WIDTH=200> &nbsp;</td>
+
+<td><b>Backtracking</b>. This is a process when you need to access the most recent data element in a
+series of elements. Think of a labyrinth or maze - how do you find a way from an entrance to an exit?
+
+<p>Once you reach a dead end, you must backtrack. But backtrack to where? to the previous choice
+point. Therefore, at each choice point you store on a stack all possible choices. Then backtracking
+simply means popping a next choice from the stack.
+</td>
+</tr>
+</TABLE>
+
+
+<li>
+
+<li>Language processing:
+<ul>
+<li>space for parameters and local variables is created internally using a stack.
+<li>compiler's syntax check for matching braces is implemented by using stack.
+<li>support for recursion
+</ul>
+</ul>
+
+
+<h3>Implementation</h3>
+In the standard library of classes, the data type stack is an <i>adapter</i> class, meaning that
+a stack is
+built on top of other data structures. The underlying structure for a stack could be an array,
+a vector, an ArrayList, a linked list, or any other collection. Regardless of the type of the
+underlying data structure, a Stack must implement the same functionality. This is achieved by
+providing a unique interface:
+
+<dir><pre>
+public interface StackInterface&lt;AnyType>
+{
+   public void push(AnyType e);
+
+   public AnyType pop();
+
+   public AnyType peek();
+
+   public boolean isEmpty();
+}
+</pre></dir>
+
+
+The following picture demonstrates the idea of implementation <i>by composition</i>.
+<center><img src="https://www.cs.cmu.edu/~adamchik/15-121/lectures/Stacks%20and%20Queues/pix/stack_abstraction1.bmp"></center>
+
+<p>Another implementation requirement (in addition to the above interface) is that all stack
+operations must run in <b><font color="green">constant time O(1)</font></b>. Constant time means
+that there is some constant k such that an operation takes k nanoseconds of computational time
+regardless of the stack size.
+
+<h4>Array-based implementation</h4>
+
+<TABLE  bordercolor="" cellpadding="2">
+<tr ALIGN=left>
+<td>&nbsp; <img src="https://www.cs.cmu.edu/~adamchik/15-121/lectures/Stacks%20and%20Queues/pix/array_stack.bmp"> &nbsp;</td>
+<td>In an array-based implementation we maintain the following fields:  an array A of a default size
+(&ge; 1), the variable <i>top</i> that refers to the top
+element in the stack and the <i>capacity</i> that refers to the array size.
+The variable  <i>top</i> changes from -1  to <code>capacity - 1</code>. We say that a stack is
+empty when <code>top = -1</code>, and the stack is full when <code>top = capacity-1</code>.
+<p> In a fixed-size stack abstraction, the capacity stays unchanged, therefore when <i>top</i>
+reaches <i>capacity</i>, the stack object throws an exception.
+
+<p> In a dynamic stack abstraction when <i>top</i> reaches <i>capacity</i>, we double up
+the stack size.
+</td>
+</tr>
+</TABLE>
+
+
+
+
+
+<h4>Linked List-based implementation</h4>
+
+<TABLE  bordercolor="" cellpadding="2">
+<tr ALIGN=left>
+<td>Linked List-based implementation provides the best (from the efficiency point of view)
+dynamic stack implementation.&nbsp;<p>&nbsp;
+</td>
+<td>&nbsp; <img src="https://www.cs.cmu.edu/~adamchik/15-121/lectures/Stacks%20and%20Queues/pix/LL-stack.bmp"> &nbsp;</td>
+</tr>
+</TABLE>
+
+</body>
+</html>
