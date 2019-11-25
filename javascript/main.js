@@ -50,5 +50,7 @@ function onsubmit(e){
     }
 
 }
-
+function showEditor(){
+  document.querySelector('.iframec').style.display='block';
+}
 /*Login page script ends here */
