@@ -1,9 +1,31 @@
-body{
-	background-color: #252525 ;
-	color: #f39c12;
-	font-family: Arial,Helvetica,sans-serif;
-	font-size:20px;
-	line-height: 1.6em;
+
+.back {
+  	background-image: url("../images/dark.jpg");
+	height: 100%; 
+  	background-position: center;
+  	background-size: cover;
+}
+
+.hold {
+	padding: 20px;
+}
+
+.login {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+
+.center {
+	text-align: center;
+	font-family: sans-serif;
+	font-size:80px;
+}
+
+.editor {
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
 }
 
 #main-header{

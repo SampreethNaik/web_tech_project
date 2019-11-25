@@ -4,56 +4,33 @@
 	<title>Introduction</title>
 	<link rel="icon" href=".././images/code.png">
 	<link rel="stylesheet" type="text/css" href="../css/styleintroduction.css">
+	<link rel="stylesheet" type="text/css" href="../css/styledashboard.css">
+</head>
 
-	<div class="dropdown">
-	<button class="dropbtn">Menu</button>
-	<div class="dropdown-content">
 
-		<a href="#">Progress</a>
-		<a href="#">Questions</a>
-		<a href="#">References</a>
+<body class="back">
+	<div>
+		<div id="mySidenav" class="sidenav">
+	  		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+	  		<a href="#">A</a>
+	  		<a href="#">B</a>
+	  		<a href="#">C</a>
+	  		<a href="#">D</a>
+		</div>
+		<div id="main">
+			<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>		
+	  	</div>
+	  	<div class="login"><button class="button aligntr">Login</button></div>
 
-	</div>
+		<h1 class="center">Introduction To Data Structures</h1>
+		<div class="hold">
+			<p>In computer science, a data structure is a data organization, management, and storage format that enables efficient access and modification. More precisely, a data structure is a collection of data values, the relationships among them, and the functions or operations that can be applied to the data.</p>
+			<p>Data structures serve as the basis for abstract data types (ADT). The ADT defines the logical form of the data type. The data structure implements the physical form of the data type. Different types of data structures are suited to different kinds of applications, and some are highly specialized to specific tasks. For example, relational databases commonly use B-tree indexes for data retrieval, while compiler implementations usually use hash tables to look up identifiers. Data structures provide a means to manage large amounts of data efficiently for uses such as large databases and internet indexing services. Usually, efficient data structures are key to designing efficient algorithms. Some formal design methods and programming languages emphasize data structures, rather than algorithms, as the key organizing factor in software design. Data structures can be used to organize the storage and retrieval of information stored in both main memory and secondary memory.</p>
+			<p>Data structures are generally based on the ability of a computer to fetch and store data at any place in its memory, specified by a pointer—a bit string, representing a memory address, that can be itself stored in memory and manipulated by the program. Thus, the array and record data structures are based on computing the addresses of data items with arithmetic operations, while the linked data structures are based on storing addresses of data items within the structure itself. The implementation of a data structure usually requires writing a set of procedures that create and manipulate instances of that structure. The efficiency of a data structure cannot be analyzed separately from those operations. This observation motivates the theoretical concept of an abstract data type, a data structure that is defined indirectly by the operations that may be performed on it, and the mathematical properties of those operations</p>
+		</div>
+
+  		<div class="editor"><button class="button alignbr">Editor</button></div>
     </div>
-	</head>
-
-
-<body>
-	<header id="main-header">
-		<div class="container">
-		<h1>Codify</h1>
-	</div>
-	</header>
-		<nav id="navbar">
-		<div class="container">
-		<ul>
-			<li><a href="#">Home</a></li>
-			<li><a href="#">About</a></li>
-			<li><a href="#">Services</a></li>
-			<li><a href="#">More</a></li>
-		</ul>
-	</div>
-	</nav>
-
-	<div class="container">
-	<section id="main">
-		<h1>Data Structures</h1>
-		<p>Scared of Code?</p>
-		<code>
-			#include<stdio.h> 
-			int main() { 
- 			printf("Hello Geeks");
-		</code> 
-} 
-	</section>
-	<aside id="sidebar">
-		<p></p>
-	</aside>
-</div>
-
-	<footer id="main-footer">
-	<p>Copyright &copy; S<sup>3</sup></p>
-	</footer>
-
+	<script src="../javascript/main.js"> </script>
 </body>
 </html>
