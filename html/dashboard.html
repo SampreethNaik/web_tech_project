@@ -11,24 +11,30 @@
 	<div class="bg">
 	<div id="mySidenav" class="sidenav">
   		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  		<a href="#">A</a>
-  		<a href="#">B</a>
-  		<a href="#">C</a>
-  		<a href="#">D</a>
+  		<a href="#">Lessons</a>
+  		<a href="#">About US</a>
+  		<a href="#">Chats</a>
+  		<a href="#">Code Editor</a>
 	</div>
 	<div id="main">
 		<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+      
   		<h4>CodeSmith</h4>
-  		
-  		<!--<iframe src="https://www.onlinegdb.com/online_c_compiler"></iframe>-->
+      <img class="logo" src=".././images/code.png" alt= "our logo" width = "90" height = "90">
+  		<!--<iframe src="https://repl.it/languages/c"></iframe>-->
   		
       <br/>
   		<p>Click below to begin your developer journey!</p>
   		<br/>
   		<br/>
-  		<button class="button buttongets">Get Started</button>
-  		<button class="button adjust"><img src="../images/loginicon.jpeg"> </button>
-			
+  		<button class="button buttongets" onclick = window.location.href='./introduction.html'>Get Started </button>
+  		<a href="#" class="login"><img src="../images/login.png"
+        alt="login" width = "50" height = "50"> </a>
+      <a href="#" class="chats"><img src="../images/chat.png"
+        alt="chats" width = "50" height = "50"> </a>
+      <div	class="codeditor" onclick="showEditor() "><img src = "../images/editor.png"
+      alt = "codeEditor" width="50" height= "50"> </div>	
+      <iframe class="iframec" src="https://repl.it/languages/c" width = "500" height = "500"></iframe>
   	</div>
   	</div>
 	<script src="../javascript/main.js"> </script>
