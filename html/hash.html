@@ -1,0 +1,452 @@
+
+<html><head><title>Hashing
+</title></head>
+<body text="#000000" bgcolor="#FFFFFF">
+
+<link rel="stylesheet" href="pix/course.css" type="text/css">
+<link rel="stylesheet" type="text/css" href="../css/stacks_queues.css">
+
+
+<button class="back" onclick="window.location.href='introduction.html'">Back</button>
+
+
+<center><h1><font color="green">Concept of Hashing</font></h1></center>
+
+
+
+<h3>Introduction</h3>
+<TABLE  bordercolor="" cellpadding="2">
+<tr ALIGN=left>
+<td>The problem at hands is to speed up searching. Consider the problem of searching an array for a given value. If the array is not sorted,
+the search might require examining each and all elements of the array. If the array is sorted, we can use the binary search, and therefore reduce the worse-case runtime complexity to O(log n). We could search even faster if we know in advance the index at which that value is located in the array. Suppose we do
+have that magic function that would tell us the index for a given value. With this magic
+function our search is reduced to just one probe, giving us a constant runtime O(1). Such a function is called a <b>hash function
+</b>. A hash function is a function which when given a key, generates an address in the table.
+
+</td>
+<td>&nbsp; <img src="https://www.cs.cmu.edu/~adamchik/15-121/lectures/Hashing/pix/hashing0.bmp"> &nbsp;</td>
+</tr>
+</TABLE>
+
+
+
+<p>The example of a hash function is a <i>book call number</i>. Each book in the library
+has a <i>unique</i> call number. A call number is like an address: it tells us where the
+book is located in the library. Many academic libraries in the United States, uses Library of
+Congress Classification for call numbers. This system uses a combination of letters and numbers to
+arrange materials by subjects.
+
+<p>A hash function that returns a unique hash number is called a <b>universal hash
+function</b>. In practice it is extremely hard to assign unique numbers to objects. The
+later is always possible only if you know (or approximate) the number of objects to be
+proccessed.
+
+<p>Thus, we say that our hash function has the following properties
+<ul>
+<li>it always returns a number for an object.
+<li>two equal objects will always have the same number
+<li>two unequal objects not always have different numbers
+</ul>
+
+
+<p>The precedure of storing objets using a hash function is the following.
+<dir>
+Create an array
+of size <i>M</i>. Choose a hash function <i>h</i>, that is a
+mapping from objects into integers <i>0, 1, ..., M-1</i>. Put these objects into an array
+at indexes computed via the hash function <i>index = h(object)</i>. Such array is called a
+<b>hash table</b>.
+</dir>
+
+<center><img src="https://www.cs.cmu.edu/~adamchik/15-121/lectures/Hashing/pix/hashing1.bmp"  HEIGHT=280 WIDTH=340></center>
+
+
+<p>How to choose a hash function? One approach of creating a hash function is to use
+Java's <i>hashCode()</i> method. The hashCode() method is implemented in the Object class
+and therefore each class in Java inherits it. The hash code provides a numeric representation of
+an object (this is somewhat similar to the toString method that gives a text representation of
+an object). Conside the following code example
+
+<dir><pre>
+Integer obj1 = new Integer(2009);
+String obj2 = new String("2009");
+System.out.println("hashCode for an integer is " + obj1.hashCode());
+System.out.println("hashCode for a string is " + obj2.hashCode());
+</dir></pre>
+It will print
+<dir><pre>
+hashCode for an integer is 2009
+hashCode for a string is 1537223
+</dir></pre>
+<p>The method hasCode has different implementation in different classes. In the String
+class, hashCode is computed by the following formula
+<dir><code>s.charAt(0) * 31<sup>n-1</sup> + s.charAt(1) * 31<sup>n-2</sup> + ... +
+s.charAt(n-1)</code
+></dir>
+where <i>s</i> is a string and <i>n</i> is its length. An example
+
+<dir><code>"ABC" = 'A' * 31<sup>2</sup> + 'B' * 31 + 'C' = 65 * 31<sup>2</sup> + 66 * 31 +
+67 = 64578
+</code></dir>
+
+<p>Note that Java's <i>hashCode</i> method might return a negative integer. If a string is
+long enough, its hashcode will be bigger than the largest integer we can store on 32 bits CPU.
+In this case, due to integer overflow, the value returned by <i>hashCode</i> can be negative.
+
+
+<h3>Collisions</h3>
+<p>When we put objects into a hashtable, it is possible that different objects (by the <i>equals()</i> method)
+might have the same hashcode. This is called a <b>collision</b>. Here is the example of
+collision. Two different strings ""Aa" and "BB" have the same key:
+.
+<dir><code>"Aa" = 'A' * 31 + 'a' = 2112<br>
+"BB" = 'B' * 31 + 'B' = 2112
+</code></dir>
+
+<TABLE  bordercolor="" cellpadding="2">
+<tr ALIGN=left>
+<td>&nbsp; <img src="https://www.cs.cmu.edu/~adamchik/15-121/lectures/Hashing/pix/hashing2.bmp"> &nbsp;</td>
+<td>How to resolve collisions? Where do we put the second and subsequent values that hash to
+this same location? There are several approaches in dealing with collisions. One of them is
+based on idea of putting the keys that collide in a linked list! A hash table then is an array of lists!!
+This technique is called a <i>separate chaining</i> collision resolution.
+</td>
+</tr>
+</TABLE>
+
+
+
+<p>The big attraction of using a hash table is a constant-time performance for the basic
+operations <code>add, remove, contains, size</code>. Though, because of collisions, we cannot
+guarantee
+the constant runtime in the worst-case. Why? Imagine that all our objects collide into the
+same index. Then searching for one of them will be equivalent to searching in a list, that
+takes a liner runtime. However, we can guarantee an expected constant runtime, if we make sure
+that our lists won't become too long. This is usually implemnted by maintaining a <i>load factor</i>
+that keeps a track of the average length of lists.
+If a load factor approaches a set in advanced threshold, we create a bigger array and <i>rehash</i>
+all elements from the old table into the new one.
+
+<p>Another technique of collision resolution is a <i>linear probing</i>. If we cannoit insert
+at index k, we try the next slot k+1. If that one is occupied, we go to k+2, and so on. This is quite simple approach but it requires new thinking about hash tables. Do you always find an empty slot? What do you do when you reach the end of the table?
+
+
+<h3>HashSet</h3>
+
+<p>HashSet is a regular set - all objects in a set are distinct. Consider this code segment
+
+<dir><pre>
+String[] words = new String("Nothing is as easy as it looks").split(" ");
+
+HashSet&lt;String> hs = new HashSet&lt;String>();
+
+for (String x : words) hs.add(x);
+
+System.out.println(hs.size() + " distinct words detected.");
+System.out.println(hs);
+</dir></pre>
+
+<p>It prints "6 distinct words detected.". The word "as" is stored only once.
+
+<p>HashSet stores and retrieves elements by their content, which is internally converted
+into an integer by applying a hash function. Elements from a HashSet are retrieved using an Iterator. The order in which elements are returned depends on their hash codes.
+
+
+<p>The following are some of the HashSet methods:
+<ul>
+
+<li> set.add(key) -- adds the key to the set.
+<li> set.contains(key) -- returns true if the set has that key.
+<li> set.iterator() -- returns an iterator over the elements
+</ul>
+
+
+<h3>Spell-checker</h3>
+
+<p>You are implement a simple spell checker using a hash table.
+Your spell-checker will be reading from two input files. The first file is a dictionary
+located at the URL
+<i> http://www.andrew.cmu.edu/course/15-121/dictionary.txt </i>. The program should read
+the dictionary and insert the words into a hash table. After reading the dictionary, it will
+read a list of words from a second file. The goal of the spell-checker is to determine the
+misspelled words in the second file by looking each word up in the dictionary.
+The program should output each misspelled word.
+
+
+
+<h3>HashMap</h3>
+
+<p>HashMap is a collection class that is designed to store elements as key-value pairs. Maps
+provide a way of looking up one thing based on the value of another.
+
+<center><img src="https://www.cs.cmu.edu/~adamchik/15-121/lectures/Hashing/pix/HashMap1.bmp" HEIGHT=380   ></center>
+
+
+<p>We modify the above code by use of the HashMap class to store words along with their
+frequencies.
+<dir><pre>
+String[] data = new String("Nothing is as easy as it looks").split(" ");
+
+HashMap&lsaquo;String, Integer> hm = new HashMap&lsaquo;String, Integer>();
+
+for (String key : data)
+{
+	Integer freq = hm.get(key);
+	if(freq == null) freq = 1; else freq ++;
+	hm.put(key, freq);
+}
+System.out.println(hm);
+</dir></pre>
+
+<p>This prints <code>{as=2, Nothing=1, it=1, easy=1, is=1, looks=1}</code>.
+
+<p>HashSet and HashMap will be printed in no particular order. If the order of insertion is important in your application, you should use <i>LinkeHashSet</i> and/or <i>LinkedHashMap</i> classes. If you want to print dtata in sorted order, you should use <i>TreeSet</i> and or <i>TreeMap</i> classes
+
+
+<p>The following are some of the HashMap methods:
+<ul>
+<li> map.get(key) -- returns the value associated with that key. If the map does not associate any
+value with that key then it returns null. Referring to "map.get(key)" is similar to referring
+to "A[key]" for an array A.
+<li> map.put(key,value) -- adds the key-value pair to the map. This is similar to "A[key] = value"
+for an array A.
+<li> map.containsKey(key) -- returns true if the map has that key.
+<li> map.containsValue(value) -- returns true if the map has that value.
+<li> map.keySet() -- returns a set of all keys
+<li> map.values() -- returns a collection of all value
+</ul>
+
+<h3>Anagram solver</h3>
+
+<p>An anagram is a word or phrase formed by reordering the letters of another word or
+phrase. Here is a list of words such that the words on each line are anagrams of
+each other:
+<dir><pre>
+barde, ardeb, bread, debar, beard, bared
+
+bears, saber, bares, baser, braes, sabre
+</pre></dir>
+
+In this program you read a dictionary from the web site at
+<i> http://www.andrew.cmu.edu/course/15-121/dictionary.txt </i> and build a <b>Map( )</b> whose key is a sorted
+word (meaning that its characters are sorted in alphabetical order)
+and whose values are the word's anagrams.
+
+<p><center><img src="https://www.cs.cmu.edu/~adamchik/15-121/lectures/Hashing/pix/anagram.bmp" HEIGHT=200 WIDTH=280></center>
+
+
+<h2>Priority Queue</h2>
+<p>We are often faced with a situation in which certain events/elements in life have higher or lower priorities than others. For example, university course prerequisites, emergency vehicles have priority over regular vehicles. A Priority Queue is like a queue, except that each element is inserted according a given priority. The simplest example is provided by real numbers and &le; or &ge; relations over them. We can say that the smallest (or the largest) numerical value has the highest priority. In practice, priority queues are more complex than that. A priority queue is a data structure containing records with numerical keys (priorities) that supports some of the following operations:
+<ul>
+<li>Construct a priority queue
+<li>Insert a new item.
+<li>Remove an item.with the highest priority
+<li>Change the priority
+<li>Merge two priority queues
+</ul>
+
+<p>Observe that a priority queue is a proper generalization of the stack (remove the newest) and the queue (remove the oldest).
+
+<h3>Elementary Implementations</h3>
+<p>There are numerous options for implementing priority queues. We start with simple implementations based on use of unordered or ordered sequences, such as linked lists and arrays. The worst-case costs of the various operations on a priority queue are
+summarized in this table
+<br>&nbsp;
+<table border="2" cellpadding="2" cellspacing="2">
+
+<tr>
+<td colspan="1" rowspan="1"><p>&nbsp;</p>
+</td>
+<td colspan="1" rowspan="1"><p>&nbsp;<i>insert</i></p>
+</td>
+<td colspan="1" rowspan="1">
+
+<p>&nbsp;<i>deleteMin</i></p>
+</td>
+<td colspan="1" rowspan="1"><p>&nbsp;<i>remove</i></p>
+</td>
+<td colspan="1" rowspan="1"><p>&nbsp;<i>findMin</i></p>
+</td>
+<td colspan="1" rowspan="1"><p>&nbsp;<i>merge</i></p>
+
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1"><p><tt>ordered array</tt></p>
+</td>
+<td colspan="1" rowspan="1"><p><tt><i>N</i></tt></p>
+</td>
+<td colspan="1" rowspan="1"><p><tt>1</tt></p>
+</td>
+<td colspan="1" rowspan="1"><p><tt><i>N</i></tt></p>
+
+</td>
+<td colspan="1" rowspan="1"><p><tt>1</tt></p>
+</td>
+
+<td colspan="1" rowspan="1"><p><tt><i>N</i></tt></p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><tt>ordered list</tt></p>
+
+</td>
+<td colspan="1" rowspan="1"><p><tt><i>N</i></tt></p>
+</td>
+<td colspan="1" rowspan="1"><p><tt>1</tt></p>
+</td>
+<td colspan="1" rowspan="1"><p><tt>1</tt></p>
+</td>
+<td colspan="1" rowspan="1"><p><tt>1</tt></p>
+</td>
+
+<td colspan="1" rowspan="1"><p><tt><i>N</i></tt></p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1"><p><tt>unordered array</tt></p>
+</td>
+<td colspan="1" rowspan="1"><p><tt>1</tt></p>
+
+</td>
+<td colspan="1" rowspan="1"><p><tt><i>N</i></tt></p>
+</td>
+<td colspan="1" rowspan="1"><p><tt>1</tt></p>
+</td>
+<td colspan="1" rowspan="1"><p><tt><i>N</i></tt></p>
+</td>
+
+<td colspan="1" rowspan="1"><p><tt><i>N</i></tt></p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1"><p><tt>unordered list</tt></p>
+</td>
+<td colspan="1" rowspan="1"><p><tt>1</tt></p>
+</td>
+<td colspan="1" rowspan="1"><p><tt><i>N</i></tt></p>
+
+</td><td colspan="1" rowspan="1"><p><tt>1</tt></p></td>
+<td colspan="1" rowspan="1"><p><tt><i>N</i></tt></p></td>
+<td colspan="1" rowspan="1"><p><tt>1</tt></p>
+</td>
+</tr>
+</table><br>
+
+<p>Later on in the course we will see another implementation of a priority queueu based on a binary heap.
+
+<h3>Comparable and Comparator interfaces</h3>
+
+<p>The Comparable interface contains only one method with the following signature:
+<dir><Pre>
+	public int compareTo(Object obj);
+</pre></dir>
+The returned value is negative, zero or positive depending on whether this object is
+less, equals or greater than parameter object. Note a difference between the equals()  and compareTo() methods. In the following code example we design a class of playing cards that can be compared based on their values:
+
+<dir><pre>
+class Card implements Comparable&lt;Card>
+{
+   private String suit;
+   private int value;
+
+   public Card(String suit, int value)
+   {
+      this.suit = suit;
+      this.value = value;
+   }
+   public int getValue()
+   {
+      return value;
+   }
+   public String getSuit()
+   {
+      return suit;
+   }
+   public int compareTo(Card x)
+   {
+      return getValue() - x.getValue();
+   }
+}
+</dir></pre>
+
+<p>It is important to recognize that if a class implements the Comparable interface than compareTo() and equals() methods must be correlated in a sense that if <code>x.compareTo(y)==0</code>, then <code>x.equals(y)==true</code>. The default equals() method compares two objects based on their reference numbers and therefore in the above code example two cards with the same value won't be equal. And a final comment, if the equals() method is overriden than the hashCode() method must also be overriden, in order to maintain the following properety: if <code>x.equals(y)==true</code>, then <code>x.hashCode()==y.hashCode()</code>.
+
+<p>Suppose we would like to be more flexible and have a different way to compare cards, for example, by suit. The above implementation doesn’t  allow us to do this, since there is only one compareTo method in Card. Java provides another interface which we can be uses to solve this problem:
+<dir><pre>
+public interface Comparator&lt;AnyType>
+{
+   compare(AnyType first, AnyType second);
+}
+</dir></pre>
+<p>Notice that the compare() method takes two arguments, rather than one. Next we demonstrate the way to compare two cards by their suits, This method is defined in its own class that implements Comparator:
+<dir><pre>
+class SuitSort implements Comparator&lt;Card>
+{
+   public int compare(Card x, Card y)
+   {
+      return x.getSuit().compareTo(  y.getSuit() );
+   }
+}
+</dir></pre>
+
+<p>Objects that implement the Comparable interface can be sorted using the sort() method of the Arrays and Collections classes. In the following code example, we randomly generate a hand of five cards and sort them by value and then by suit:
+<dir><pre>
+String[] suits = {"Diamonds", "Hearts", "Spades", "Clubs"};
+Card[] hand = new Card[5];
+Random rand = new Random();
+
+for (int i = 0; i &lt; 5; i++)
+   hand[i] = new Card(suits[rand.nextInt(4)], rand.nextInt(12));
+
+System.out.println("sort by value");
+Arrays.sort(hand);
+System.out.println(Arrays.toString(hand));
+
+System.out.println("sort by suit");
+Arrays.sort(hand, new SuitSort() );
+System.out.println(Arrays.toString(hand));
+</dir></pre>
+
+<p>Objects can have several different ways of being compared. Here is another way of comparing cards: first by value and if values are the same then by suit:
+<dir><pre>
+class ValueSuitSort implements Comparator&lt;Card>
+{
+   public int compare(Card x, Card y)
+   {
+      int v = x.getValue() - y.getValue();
+
+      return ( v == 0) ? x.getSuit().compareTo(y.getSuit()) : v;
+   }
+}
+</dir></pre>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

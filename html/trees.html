@@ -1,0 +1,351 @@
+
+<html><head><title>Binary Trees
+</title></head>
+<body text="#000000" bgcolor="#FFFFFF">
+
+<link rel="stylesheet" href="pix/course.css" type="text/css">
+<link rel="stylesheet" type="text/css" href="../css/stacks_queues.css">
+
+
+<button class="back" onclick="window.location.href='introduction.html'">Back</button>
+
+<center><h1><font color="green">Binary Trees</font></h1></center>
+
+
+<h2>Introduction</h2>
+<TABLE  bordercolor="" cellpadding="2">
+<tr ALIGN=left>
+<td>We extend the concept of linked data structures to structure containing
+nodes with more than one self-referenced field. A binary tree is made of nodes, where each node contains a "left" reference, a "right" reference, and a data element. The topmost node in the tree is called the root.
+
+
+<p>Every node (excluding a root) in a tree is connected by a directed edge from exactly one other node. This node is called a parent. On the other hand, each node can be connected to arbitrary number of nodes, called children. Nodes with no children are called leaves, or external nodes. Nodes which are not leaves are called internal nodes. Nodes with the same parent are called siblings.
+
+
+</td>
+<td>&nbsp; <img src="https://www.cs.cmu.edu/~adamchik/15-121/lectures/Trees/pix/binaryTree.bmp"> &nbsp;</td>
+</tr>
+</TABLE>
+
+
+
+<p>More tree terminology:
+
+<ul>
+<li>The depth of a node is the number of edges from the root to the
+node.<br>
+<li>The height of a node is the number of edges from the node to the deepest leaf.
+<li>The height of a tree is a height of the root.
+<li>A full binary tree.is a binary tree in which each node has exactly zero or two children.
+<li>A complete binary tree is a binary tree, which is completely
+filled, with the possible exception of the bottom level, which is filled from left to
+right.
+</ul>
+
+<center><img src="https://www.cs.cmu.edu/~adamchik/15-121/lectures/Trees/pix/full_complete.bmp"></center>
+
+<p>A complete binary tree is very special tree, it provides the best possible ratio between the number of nodes and the height. The height h of a complete binary tree with N nodes is at most O(log N). We can easily prove this by counting nodes on each level, starting with the root, assuming that each level has the maximum number of nodes:
+<dir><pre>
+n = 1 + 2 + 4 + ... + 2<sup>h-1</sup> + 2<sup>h</sup> = 2<sup>h+1</sup> - 1
+</pre></dir>
+<p>Solving this with respect to h, we obtain
+<dir><pre>
+h = O(log n)
+</pre></dir>
+<p>where the big-O notation hides some superfluous details.
+
+
+
+<h3>Advantages of trees</h3>
+<p>Trees are so useful and frequently used, because they have some very serious advantages:
+<ul>
+<li>Trees reflect structural relationships in the data
+<li>Trees are used to represent hierarchies
+<li>Trees provide an efficient insertion and searching
+<li>Trees are very flexible data, allowing to move subtrees around with minumum effort
+</ul>
+<h2>Traversals</h2>
+<p>A traversal is a process that visits all the nodes in the tree. Since a tree is a nonlinear data structure, there is no unique traversal. We will consider several traversal algorithms with we group in the following two kinds
+<ul>
+<li>depth-first traversal
+<li>breadth-first traversal
+</ul>
+<p>There are three different types of depth-first traversals, :
+
+<ul>
+<li>PreOrder traversal - visit the parent first and then left and right children;
+<li>InOrder traversal - visit the left child, then the parent and the right child;
+<li>PostOrder traversal - visit left child, then the right child and then the parent;
+</ul>
+
+
+<p>There is only one kind of breadth-first traversal--the level order traversal. This traversal visits nodes by levels from top to bottom and from left to right.
+
+
+<TABLE  bordercolor="" cellpadding="2">
+<tr ALIGN=left>
+<td>As an example consider the following tree and its four traversals:
+
+<br>
+<br>PreOrder  - 8, 5, 9, 7, 1, 12, 2, 4, 11, 3
+<br>InOrder   - 9, 5, 1, 7, 2, 12, 8, 4, 3, 11
+<br>PostOrder  - 9, 1, 2, 12, 7, 5, 3, 11, 4, 8
+<br>LevelOrder  - 8, 5, 4, 9, 7, 11, 1, 12, 3, 2
+
+</td>
+<td>&nbsp; <img src="https://www.cs.cmu.edu/~adamchik/15-121/lectures/Trees/pix/tree1.bmp" HEIGHT=260 WIDTH=300> &nbsp;</td>
+</tr>
+</TABLE>
+
+
+
+
+
+<p>In the next picture we demonstarte the order of node visitation. Number 1 denote the first node in a particular traversal and 7 denote the last node.
+
+<center><img src="https://www.cs.cmu.edu/~adamchik/15-121/lectures/Trees/pix/traversals.bmp"></center>
+
+<p>These common traversals can be represented as a single algorithm by assuming that we visit each node three times. An <i>Euler tour</i> is a walk around the binary tree where each edge is treated as a wall, which you cannot cross. In this walk each node will be visited either on the left, or under the below, or on the right. The Euler tour in which we visit nodes on the left produces a preorder traversal. When we visit nodes from the below, we get an inorder traversal. And when we visit nodes on the right, we get a postorder
+traversal.
+
+
+<center><img src="https://www.cs.cmu.edu/~adamchik/15-121/lectures/Trees/pix/traversalEuler.bmp"></center>
+
+
+
+<h2>Binary Search Trees</h2>
+<p>We consider a particular kind of a binary tree called a Binary
+Search Tree (BST). The basic idea behind this data structure is to have such a storing repository that provides the efficient way of data sorting, searching and retriving.
+
+<TABLE  bordercolor="" cellpadding="2">
+<tr ALIGN=left>
+<td>&nbsp; <img src="https://www.cs.cmu.edu/~adamchik/15-121/lectures/Trees/pix/pix03.bmp" HEIGHT=200 WIDTH=300> &nbsp;</td>
+<td>A BST is a binary tree where nodes are ordered in the following way:
+<ul>
+<li>each node contains one key (also known as data)
+<li>the keys in the left subtree are less then the key in its
+parent node, in short L &lt; P;
+<li>the keys in the right subtree are greater the key in its parent
+node, in short P &lt; R;
+<li>duplicate keys are not allowed.
+</ul></i>
+
+<p>In the following tree  all nodes in the left subtree of 10 have keys &lt; 10
+while all nodes in the right subtree &gt; 10. Because both the left and right subtrees of a BST are again search trees; the above definition is recursively applied to all internal nodes:
+</td>
+</tr>
+</TABLE>
+
+
+
+<h3>Implementation</h3>
+<p>We implement a binary search tree using a private inner class BSTNode. In order to
+support the <i>binary search tree property</i>, we require that data
+stored in each node is Comparable:
+<dir><pre>
+public class BST &lt;AnyType extends Comparable&lt;AnyType>>
+{
+   private Node&lt;AnyType> root;
+
+   private class Node&lt;AnyType>
+   {
+      private AnyType data;
+      private Node&lt;AnyType> left, right;
+
+      public Node(AnyType data)
+      {
+         left = right = null;
+         this.data = data;
+      }
+   }
+   ...
+
+}
+</pre></dir>
+
+
+<h3>Insertion</h3>
+<p>The insertion procedure is quite similar to searching. We start at the root and
+recursively go down the tree searching for a location in a BST to insert a new node.
+If the element to be inserted is already in the tree, we are done (we do not insert duplicates). The new node will always replace a NULL reference.
+
+<center><img src="https://www.cs.cmu.edu/~adamchik/15-121/lectures/Trees/pix/insert.bmp"></center>
+
+
+<p><b>Exercise.</b> Given a sequence of numbers:
+<pre>11, 6, 8, 19, 4, 10, 5, 17, 43, 49, 31</pre>
+<p>Draw a binary search tree by inserting the above numbers from left to right.
+
+<center><img src="https://www.cs.cmu.edu/~adamchik/15-121/lectures/Trees/pix/insertEx.bmp"></center>
+
+
+<h3>Searching</h3>
+Searching in a BST always starts at the root. We compare a data stored at the root with
+the key we are searching for (let us call it as <code>toSearch</code>). If the node
+does not contain the key we proceed either to the left or right child depending upon
+comparison. If the result of comparison is negative we go to the left child,
+otherwise - to the right child.  The recursive structure of a BST yields a recursive
+algorithm.
+
+<p>Searching in a BST has O(h) worst-case runtime complexity, where h is the height of the tree. Since s binary search tree with n nodes has a minimum of O(log n) levels, it takes at least O(log n) comparisons to find a particular node.
+Unfortunately, a binary serch tree can degenerate to a linked list, reducing the search time to O(n).
+
+
+
+<h3>Deletion</h3>
+<p>Deletion is somewhat more tricky than insertion. There are several cases to consider. A node to be deleted (let us call it as <code>toDelete</code>)
+<ul>
+<li> is not in a tree;
+<li> is a leaf;
+<li> has only one child;
+<li> has two children.
+</ul>
+
+<p>If <code>toDelete</code> is not in the tree, there is nothing to delete. If <code>toDelete</code> node has only one child the procedure of deletion is identical to deleting a node from a linked list - we just bypass that node being deleted
+
+<center><img src="https://www.cs.cmu.edu/~adamchik/15-121/lectures/Trees/pix/del01.bmp"></center>
+
+
+<p>Deletion of an internal node with two children is less straightforward. If we delete such a node, we split a tree into two subtrees and therefore, some children of the internal node won't be accessible after deletion. In the picture below we delete 8:
+
+<center><img src="https://www.cs.cmu.edu/~adamchik/15-121/lectures/Trees/pix/del02.bmp"></center>
+
+<p>Deletion starategy is the following: replace the node being deleted with
+the largest node in the left subtree and then delete that largest node. By symmetry, the node being deleted can be swapped with the smallest node is the right subtree.
+
+
+<p><b>Exercise.</b> Given a sequence of numbers:
+<pre>11, 6, 8, 19, 4, 10, 5, 17, 43, 49, 31</pre>
+<p>Draw a binary search tree by inserting the above numbers from left to right and
+then show the two trees that can be the result after the removal of 11.
+<p>&nbsp;
+<center><img src="https://www.cs.cmu.edu/~adamchik/15-121/lectures/Trees/pix/deletionEx.bmp"></center>
+
+
+
+<h3>Non-Recursive Traversals</h3>
+
+<p>Depth-first traversals  can be easily implemented recursively.A non-recursive implementation is a bit more  difficult. In this section we implement
+a pre-order traversal as a tree iterator
+
+<dir><pre>
+public Iterator&lt;AnyType> iterator()
+{
+  return new PreOrderIterator();
+}
+</pre></dir>
+<p>where the PreOrderIterator class is implemented as an inner private class of the BST class
+<dir><pre>
+private class PreOrderIterator implements Iterator&lt;AnyType>
+{
+  ...
+}
+</pre></dir>
+
+<p>The main difficulty is with <the code>next()</code> method, which requires the implicit recursive
+stack implemented explicitly. We will be using Java's Stack. The algorithm starts with the root and push
+it on a stack. When a user calls for the <code>next()</code> method, we check if the top element has
+a left child. If it has a left child, we push that child on a stack and return a parent
+node. If there is no a left child, we check for a right child.  If it has a right child, we
+push that child on a stack and return a parent node. If there is no right child, we
+move back up the tree (by popping up elements from a stack) until we find a
+node with a right child. Here is the <code>next()</code> implementation
+<dir><pre>
+public AnyType next()
+{
+   Node cur = stk.peek();
+   if(cur.left != null)
+   {
+      stk.push(cur.left);
+   }
+   else
+   {
+      Node tmp = stk.pop();
+      while(tmp.right == null)
+      {
+         if (stk.isEmpty()) return cur.data;
+         tmp = stk.pop();
+      }
+      stk.push(tmp.right);
+   }
+   return cur.data;
+}
+</pre></dir>
+
+<p>The following example.shows the output and the state of the stack during each call to <code>next()</code>. Note, the algorithm works on any binary trees, not necessarily binary search trees..
+
+<center><img src="https://www.cs.cmu.edu/~adamchik/15-121/lectures/Trees/pix/non_rec_trav.bmp"></center>
+
+
+
+<P ALIGN="center">
+<TABLE BORDER=1>
+<TR align="center">
+	<TD>&nbsp;  </TD>
+   <TD>&nbsp;  </TD>
+   <TD>&nbsp;  </TD>
+   <TD>&nbsp;  </TD>
+	<TD>&nbsp;  </TD>
+   <TD>&nbsp;  </TD>
+   <TD>&nbsp;  </TD>
+   <TD>&nbsp;  </TD>
+   <TD>&nbsp;  </TD>
+   <TD>&nbsp;  </TD>
+</TR>
+<TR align="center">
+	<TD>&nbsp; <b>Output</b> &nbsp;</TD>
+	<TD>&nbsp;  </TD>
+	<TD>&nbsp; 1 &nbsp; </TD>
+	<TD>&nbsp; 2 &nbsp; </TD>
+	<TD>&nbsp; 4 &nbsp; </TD>
+	<TD>&nbsp; 6 &nbsp; </TD>
+	<TD>&nbsp; 5 &nbsp; </TD>
+	<TD>&nbsp; 7 &nbsp; </TD>
+	<TD>&nbsp; 8 &nbsp; </TD>
+	<TD>&nbsp; 3 &nbsp; </TD>
+</TR>
+<TR align="center">
+	<TD ROWSPAN="2">&nbsp; <b>Stack</b> &nbsp;</TD>
+	<TD> &nbsp; 1 &nbsp;   </TD>
+	<TD>  2 <br> 1  </TD>
+	<TD> 4 <br> 2 <br> 1  </TD>
+	<TD> 6 <br> 4 <br> 2 <br> 1  </TD>
+	<TD> 5 <br> 1  </TD>
+	<TD> 7 <br> 5 <br> 1  </TD>
+	<TD> 8 <br> 1  </TD>
+	<TD> 3  </TD>
+	<TD> &nbsp; </TD>
+</TR>
+</table>
+</center>
+
+<p>A non-recursive preorder traversal can be eloquently implemented in just three
+lines of code. If you understand next()'s implementation above, it should be no
+problem to grasp this one:
+
+<dir><pre>
+public AnyType next()
+{
+   if (stk.isEmpty()) throw new java.util.NoSuchElementException();
+
+   Node<AnyType> cur = stk.pop();
+   if(cur.right != null) stk.push(cur.right);
+   if(cur.left != null) stk.push(cur.left);
+
+   return cur.data;
+}
+</pre></dir>
+<p>Note, we push the right child before the left child.
+
+<h3>Level Order Traversal</h3>
+<p>Level order traversal processes the nodes level by level. It first processes the
+root, and then its children, then its grandchildren, and so on. Unlike the other
+traversal methods, a recursive version does not exist.
+
+<p>A traversal algorithm is similar to the non-recursive preorder traversal algorithm.
+The only difference is that a stack is replaced with a FIFO queue.
+
+
+</body>
+</html>
+
