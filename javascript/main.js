@@ -53,4 +53,8 @@ function onsubmit(e){
 function showEditor(){
   document.querySelector('.iframec').style.display='block';
 }
+
+function removeEditor(){
+  document.querySelector('.iframec').style.display='none';
+}
 /*Login page script ends here */
