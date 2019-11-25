@@ -180,6 +180,6 @@ body, html {
   bottom:200px;
 }
 
-.split-pane-component{
-  display: none;
+.textbox{
+  min-width: 60%;
 }

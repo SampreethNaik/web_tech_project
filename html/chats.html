@@ -7,6 +7,7 @@ body {
   margin: 0 auto;
   max-width: 800px;
   padding: 0 20px;
+  background: ;
 }
 
 .container {
@@ -51,6 +52,12 @@ body {
   float: left;
   color: #999;
 }
+
+.textbox{
+  position:absolute;
+  min-width: 60%;
+  bottom:50px;
+}
 </style>
 </head>
 <body>
@@ -59,19 +66,19 @@ body {
 
 <div class="container">
   <img src="/w3images/bandmember.jpg" alt="Avatar" style="width:100%;">
-  <p>Hello. How are you today?</p>
+  <p>Hello. Can you please solve this error?</p>
   <span class="time-right">11:00</span>
 </div>
 
 <div class="container darker">
   <img src="/w3images/avatar_g2.jpg" alt="Avatar" class="right" style="width:100%;">
-  <p>Hey! I'm fine. Thanks for asking!</p>
+  <p>Yeah Hi! I've the same doubt. I think this will solve the problem!</p>
   <span class="time-left">11:01</span>
 </div>
 
 <div class="container">
   <img src="/w3images/bandmember.jpg" alt="Avatar" style="width:100%;">
-  <p>Sweet! So, what do you wanna do today?</p>
+  <p>Sweet! So, what are you gon do today?</p>
   <span class="time-right">11:02</span>
 </div>
 
@@ -79,7 +86,15 @@ body {
   <img src="/w3images/avatar_g2.jpg" alt="Avatar" class="right" style="width:100%;">
   <p>Nah, I dunno. Play soccer.. or learn more coding perhaps?</p>
   <span class="time-left">11:05</span>
+
+  <form>
+    <input type="text" name="message" value="">
+    <input type="submit" value="submit" onsubmit= "createmessage()">
+     
+  </form>
+
 </div>
 
+<script src="../javascript/main.js"> </script>
 </body>
 </html>
