@@ -24,7 +24,7 @@ const emailInput = document.querySelector('#email');
 const msg = document.querySelector('.msg');
 const userList = document.querySelector('#users');
 
-myForm.addEventListener('submit', onsubmit);
+//myForm.addEventListener('submit', onsubmit);
 
 function onsubmit(e){
     e.preventDefault();
@@ -50,7 +50,22 @@ function onsubmit(e){
     }
 
 }
+
+/* For the editor */
 function showEditor(){
   document.querySelector('.iframec').style.display='block';
+}
+
+function removeEditor(){
+  document.querySelector('.iframec').style.display='none';
+}
+
+/* For the chatbox*/
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
 }
 /*Login page script ends here */
