@@ -12,8 +12,8 @@
 	<div id="mySidenav" class="sidenav">
   		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   		<a href="introduction.html">Lessons</a>
-  		<a href="about.html">About US</a>
-  		<a href="chats.html">Chats</a>
+  		<a href="#">About US</a>
+  		<a href="#">Chats</a>
   		<a href="#">Code Editor</a>
 	</div>
 	<div id="main">
@@ -28,14 +28,18 @@
   		<br/>
   		<br/>
   		<button class="button buttongets" onclick = window.location.href='./introduction.html'>Get Started </button>
-  		<a onclick = window.location.href='./login.php' class="login"><img src="../images/login.png"
+  		<a href="login.php" class="login"><img src="../images/login.png"
         alt="login" width = "50" height = "50"> </a>
       <a class="chats" onclick="openForm() "><img src="../images/chat.png" width="50" height="50"></a>
 
       <div	class="codeditor" onclick="showEditor()" ondblclick ="removeEditor()"><img src = "../images/editor.png"
       alt = "codeEditor" width="50" height= "50"> </div>	
-      <iframe class="iframec" src="https://www.onlinegdb.com/" width = "1000" height = "1000"></iframe>
-
+      <!--<iframe class="iframec" src="https://www.onlinegdb.com/" width = "1000" height = "1000"></iframe>-->
+      
+      <div style="border: 3px solid rgb(201, 0, 1); overflow: hidden; margin: 15px auto; max-width: 736px;" class="codeBox">
+      <iframe scrolling="no" src="https://www.onlinegdb.com/" style="border: 0px none; margin-left: -170px; height: 859px;  width: 926px;">
+      </iframe>
+      </div>
       
       
       <div class="chat-popup" id="myForm">
@@ -52,5 +56,9 @@
     </div>
   </div>
 	<script src="../javascript/main.js"> </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="js/scripts.js"></script>
 </body>
+<div class="helper">Click here to open IDE -></div>
+
 </html>
