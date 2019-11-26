@@ -1,0 +1,24 @@
+.login {
+  position: fixed; 
+  top:2px;
+  right:2px;
+}
+
+.chats{
+  position: fixed;
+  bottom:2px;
+  right:2px;
+}
+
+
+.logo{
+  position: fixed;
+  top:40px;
+  left:25px;
+}
+
+.codeditor{
+  position:fixed;
+  bottom:2px;
+  left:2px;
+}

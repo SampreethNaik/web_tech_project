@@ -53,11 +53,13 @@ function onsubmit(e){
 
 /* For the editor */
 function showEditor(){
-  document.querySelector('.iframec').style.display='block';
+  document.querySelector('.codeBox').style.display='block';
+  document.querySelector('.helper').style.display='block';
 }
 
 function removeEditor(){
-  document.querySelector('.iframec').style.display='none';
+  document.querySelector('.codeBox').style.display='none';
+  document.querySelector('.helper').style.display='none';
 }
 
 /* For the chatbox*/
