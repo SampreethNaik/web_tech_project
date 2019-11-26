@@ -30,13 +30,27 @@
   		<button class="button buttongets" onclick = window.location.href='./introduction.html'>Get Started </button>
   		<a href="#" class="login"><img src="../images/login.png"
         alt="login" width = "50" height = "50"> </a>
-      <a href="chats.html" class="chats"><img src="../images/chat.png"
-        alt="chats" width = "50" height = "50"> </a>
+      <a class="chats" onclick="openForm() "><img src="../images/chat.png" width="50" height="50"></a>
+
       <div	class="codeditor" onclick="showEditor()" ondblclick ="removeEditor()"><img src = "../images/editor.png"
       alt = "codeEditor" width="50" height= "50"> </div>	
-      <iframe class="iframec" src="https://www.onlinegdb.com/" width = "1000" height = "750"></iframe>
-  	</div>
-  	</div>
+      <iframe class="iframec" src="https://www.onlinegdb.com/" width = "1000" height = "1000"></iframe>
+
+      
+      
+      <div class="chat-popup" id="myForm">
+      <form action="#" class="form-container">
+      <h1>Messages</h1>
+
+      <label for="msg"><b>Message</b></label>
+      <textarea placeholder="Type message.." name="msg" required></textarea>
+
+      <button type="submit" class="btn">Send</button>
+      <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+      </form>
+      </div>
+    </div>
+  </div>
 	<script src="../javascript/main.js"> </script>
 </body>
 </html>
