@@ -28,7 +28,7 @@
   		<br/>
   		<br/>
   		<button class="button buttongets" onclick = window.location.href='./introduction.html'>Get Started </button>
-  		<a href="login.php" class="login"><img src="../images/login.png"
+  		<a onclick = window.location.href='./login.php' class="login"><img src="../images/login.png"
         alt="login" width = "50" height = "50"> </a>
       <a class="chats" onclick="openForm() "><img src="../images/chat.png" width="50" height="50"></a>
 
@@ -43,7 +43,7 @@
       <h1>Messages</h1>
 
       <label for="msg"><b>Message</b></label>
-      <textarea placeholder="Type message.." name="msg" required></textarea>
+      <textarea id="message" placeholder="Type message.." name="msg" required></textarea>
 
       <button type="submit" class="btn">Send</button>
       <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
